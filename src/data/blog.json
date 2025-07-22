@@ -1,0 +1,362 @@
+{
+  "title": "Our Blog",
+  "breadcrumb": [
+    { "label": "Home", "href": "/" },
+    { "label": "Our Blog", "href": "/blog" }
+  ],
+  "blogs": [
+    {
+      "id": 1,
+      "slug": "furniture-trends-2024",
+      "title": "Furniture Trends 2024: What's Hot and What's Not",
+      "date": "15 April 2024",
+      "image": "/images/ChatGPT Image Jul 7, 2025, 01_35_08 PM.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+    },
+    {
+      "id": 2,
+      "slug": "ultimate-guide-choosing-perfect-sofa",
+      "title": "The Ultimate Guide to Choosing the Perfect Sofa",
+      "date": "14 April 2024",
+      "image": "/images/ChatGPT Image Jul 7, 2025, 01_40_26 PM.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+    },
+    {
+      "id": 3,
+      "slug": "choosing-right-dining-table",
+      "title": "Choosing the Right Dining Table for Your Lifestyle",
+      "date": "12 April 2024",
+      "image": "/images/ChatGPT Image Jul 7, 2025, 01_45_10 PM.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+    },
+    {
+      "id": 4,
+      "slug": "maximizing-small-spaces",
+      "title": "Maximizing Small Spaces with Smart Furniture",
+      "date": "10 April 2024",
+      "image": "/images/geastromm.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+    },
+    {
+      "id": 5,
+      "slug": "style-modern-minimalist-living-room",
+      "title": "How to Style a Modern Minimalist Living Room",
+      "date": "08 April 2024",
+      "image": "/images/livingroom.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+    },
+    {
+      "id": 6,
+      "slug": "eco-friendly-furniture-brands",
+      "title": "Top 10 Eco-Friendly Furniture Brands in 2024",
+      "date": "06 April 2024",
+      "image": "/images/livingroom2.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+    },
+    {
+      "id": 7,
+      "slug": "cozy-reading-nook",
+      "title": "Creating a Cozy Reading Nook at Home",
+      "date": "04 April 2024",
+      "image": "/images/sofa1.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+    },
+    {
+      "id": 8,
+      "slug": "smart-furniture-interior-design",
+      "title": "The Future of Smart Furniture in Interior Design",
+      "date": "02 April 2024",
+      "image": "/images/ChatGPT Image Jul 7, 2025, 01_35_08 PM.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+    },
+    {
+      "id": 9,
+      "slug": "scandinavian-interiors",
+      "title": "Styling Tips for Scandinavian Interiors",
+      "date": "01 April 2024",
+      "image": "/images/bed room.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+    }
+  ],
+  "blogDetails": [
+    {
+      "slug": "furniture-trends-2024",
+      "title": "Furniture Trends 2024: What's Hot and What's Not",
+      "heroImage": "/images/ChatGPT Image Jul 7, 2025, 01_35_08 PM.png",
+      "date": "15 April 2024",
+      "readTime": "8 min Read",
+      "author": "Sarah Johnson",
+      "authorImage": "/images/Leslie .jpg",
+      "image": "/images/blog-detail-hero.jpg",
+      "tags": ["Furniture", "Trends", "2024"],
+      "categories": ["Sofa", "Furniture", "Bed", "Offices", "Chair", "Lighting", "Nightstand", "Office Table", "Decor", "Dining Table", "Mirrors"],
+      "content": {
+        "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "body": [
+          {
+            "heading": "Identifying Your Priorities: Comfort, Style, Durability",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          },
+          {
+            "heading": "Exploring Sofa Styles",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "images": ["/images/blog2.png", "/images//blog1.png"]
+          },
+          {
+            "heading": "Matching Your Sofa to Your Décor",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
+          
+        ]
+      }
+    },
+    {
+      "slug": "ultimate-guide-choosing-perfect-sofa",
+      "title": "The Ultimate Guide to Choosing the Perfect Sofa",
+      "heroImage": "/images/ChatGPT Image Jul 7, 2025, 01_40_26 PM.png",
+      "date": "14 April 2024",
+      "readTime": "12 min Read",
+      "author": "Jerome Boll",
+      "authorImage": "/images/Leslie .jpg",
+      "image": "/images/blog-detail-hero.jpg",
+      "tags": ["Furniture", "Sofa", "Living Room"],
+      "categories": ["Sofa", "Furniture", "Bed", "Offices", "Chair", "Lighting", "Nightstand", "Office Table", "Decor", "Dining Table", "Mirrors"],
+      "content": {
+        "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "body": [
+          {
+            "heading": "Identifying Your Priorities: Comfort, Style, Durability",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          },
+          {
+            "heading": "Exploring Sofa Styles",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "images": ["/images/blog2.png", "/images//blog1.png"]
+          },
+          {
+            "heading": "Matching Your Sofa to Your Décor",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
+          
+        ]
+      }
+    },
+    {
+      "slug": "choosing-right-dining-table",
+      "title": "Choosing the Right Dining Table for Your Lifestyle",
+      "heroImage": "/images/ChatGPT Image Jul 7, 2025, 01_45_10 PM.png",
+      "date": "12 April 2024",
+      "readTime": "10 min Read",
+      "author": "Maria Garcia",
+    "authorImage": "/images/Leslie .jpg",
+      "image": "/images/blog-detail-hero.jpg",
+      "tags": ["Dining", "Table", "Furniture"],
+      "categories": ["Sofa", "Furniture", "Bed", "Offices", "Chair", "Lighting", "Nightstand", "Office Table", "Decor", "Dining Table", "Mirrors"],
+      "content": {
+        "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+       "body": [
+          {
+            "heading": "Identifying Your Priorities: Comfort, Style, Durability",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          },
+          {
+            "heading": "Exploring Sofa Styles",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "images": ["/images/blog2.png", "/images//blog1.png"]
+          },
+          {
+            "heading": "Matching Your Sofa to Your Décor",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
+          
+        ]
+      }
+    },
+    {
+      "slug": "maximizing-small-spaces",
+      "title": "Maximizing Small Spaces with Smart Furniture",
+      "heroImage": "/images/geastromm.png",
+      "date": "10 April 2024",
+      "readTime": "15 min Read",
+      "author": "David Chen",
+      "authorImage": "/images/Leslie .jpg",
+      "image": "/images/blog-detail-hero.jpg",
+      "tags": ["Small Space", "Furniture", "Design"],
+      "categories": ["Sofa", "Furniture", "Bed", "Offices", "Chair", "Lighting", "Nightstand", "Office Table", "Decor", "Dining Table", "Mirrors"],
+      "content": {
+        "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+ "body": [
+          {
+            "heading": "Identifying Your Priorities: Comfort, Style, Durability",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          },
+          {
+            "heading": "Exploring Sofa Styles",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "images": ["/images/blog2.png", "/images//blog1.png"]
+          },
+          {
+            "heading": "Matching Your Sofa to Your Décor",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
+          
+        ]
+      }
+    },
+    {
+      "slug": "style-modern-minimalist-living-room",
+      "title": "How to Style a Modern Minimalist Living Room",
+      "heroImage": "/images/livingroom.jpg",
+      "date": "08 April 2024",
+      "readTime": "12 min Read",
+      "author": "Emma Wilson",
+     "authorImage": "/images/Leslie .jpg",
+      "image": "/images/blog-detail-hero.jpg",
+      "tags": ["Minimalist", "Living Room", "Design"],
+      "categories": ["Sofa", "Furniture", "Bed", "Offices", "Chair", "Lighting", "Nightstand", "Office Table", "Decor", "Dining Table", "Mirrors"],
+      "content": {
+        "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "body": [
+          {
+            "heading": "Identifying Your Priorities: Comfort, Style, Durability",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          },
+          {
+            "heading": "Exploring Sofa Styles",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "images": ["/images/blog2.png", "/images//blog1.png"]
+          },
+          {
+            "heading": "Matching Your Sofa to Your Décor",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
+          
+        ]
+      }
+    },
+    {
+      "slug": "eco-friendly-furniture-brands",
+      "title": "Top 10 Eco-Friendly Furniture Brands in 2024",
+      "heroImage": "/images/livingroom2.png",
+      "date": "06 April 2024",
+      "readTime": "18 min Read",
+      "author": "Lisa Thompson",
+     "authorImage": "/images/Leslie .jpg",
+      "image": "/images/blog-detail-hero.jpg",
+      "tags": ["Eco-Friendly", "Furniture", "Brands"],
+      "categories": ["Sofa", "Furniture", "Bed", "Offices", "Chair", "Lighting", "Nightstand", "Office Table", "Decor", "Dining Table", "Mirrors"],
+      "content": {
+        "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+       "body": [
+          {
+            "heading": "Identifying Your Priorities: Comfort, Style, Durability",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          },
+          {
+            "heading": "Exploring Sofa Styles",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "images": ["/images/blog2.png", "/images//blog1.png"]
+          },
+          {
+            "heading": "Matching Your Sofa to Your Décor",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
+          
+        ]
+      }
+    },
+    {
+      "slug": "cozy-reading-nook",
+      "title": "Creating a Cozy Reading Nook at Home",
+      "heroImage": "/images/sofa1.png",
+      "date": "04 April 2024",
+      "readTime": "10 min Read",
+      "author": "Rachel Green",
+"authorImage": "/images/Leslie .jpg",
+      "image": "/images/blog-detail-hero.jpg",
+      "tags": ["Reading Nook", "Cozy", "Home"],
+      "categories": ["Sofa", "Furniture", "Bed", "Offices", "Chair", "Lighting", "Nightstand", "Office Table", "Decor", "Dining Table", "Mirrors"],
+      "content": {
+        "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "body": [
+          {
+            "heading": "Identifying Your Priorities: Comfort, Style, Durability",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          },
+          {
+            "heading": "Exploring Sofa Styles",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "images": ["/images/blog2.png", "/images//blog1.png"]
+          },
+          {
+            "heading": "Matching Your Sofa to Your Décor",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
+          
+        ]
+      }
+    },
+    {
+      "slug": "smart-furniture-interior-design",
+      "title": "The Future of Smart Furniture in Interior Design",
+      "heroImage": "/images/ChatGPT Image Jul 19, 2025, 11_21_00 AM.png",
+      "date": "02 April 2024",
+      "readTime": "15 min Read",
+      "author": "Alex Rodriguez",
+      "authorImage": "/images/Leslie.jpg",
+      "image": "/images/blog-detail-hero.jpg",
+      "tags": ["Smart Furniture", "Technology", "Design"],
+      "categories": ["Sofa", "Furniture", "Bed", "Offices", "Chair", "Lighting", "Nightstand", "Office Table", "Decor", "Dining Table", "Mirrors"],
+      "content": {
+        "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "body": [
+          {
+            "heading": "Identifying Your Priorities: Comfort, Style, Durability",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          },
+          {
+            "heading": "Exploring Sofa Styles",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "images": ["/images/blog2.png", "/images//blog1.png"]
+          },
+          {
+            "heading": "Matching Your Sofa to Your Décor",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
+          
+        ]
+      }
+    },
+    {
+      "slug": "scandinavian-interiors",
+      "title": "Styling Tips for Scandinavian Interiors",
+      "heroImage": "/images/bed room.jpg",
+      "date": "01 April 2024",
+      "readTime": "14 min Read",
+      "author": "Nina Anderson",
+     "authorImage": "/images/Leslie .jpg",
+      "image": "/images/blog-detail-hero.jpg",
+      "tags": ["Scandinavian", "Interior", "Design"],
+      "categories": ["Sofa", "Furniture", "Bed", "Offices", "Chair", "Lighting", "Nightstand", "Office Table", "Decor", "Dining Table", "Mirrors"],
+      "content": {
+        "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+       "body": [
+          {
+            "heading": "Identifying Your Priorities: Comfort, Style, Durability",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          },
+          {
+            "heading": "Exploring Sofa Styles",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "images": ["/images/blog2.png", "/images//blog1.png"]
+          },
+          {
+            "heading": "Matching Your Sofa to Your Décor",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
+          
+        ]
+      }
+    }
+  ]
+}

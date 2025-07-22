@@ -1,0 +1,29 @@
+{
+  "title": "Shop",
+  "breadcrumb": [
+    { "label": "Home", "href": "/" },
+    { "label": "Shop", "href": "/shop" },
+    { "label": "Chair", "href": "/product-details"},
+    { "label": "productdetails", "href": "/product-details"}
+  ],
+  "type": "Chair",
+  "producttitle": "Red Gaming Chair",
+  "inStock": true,
+  "rating": 4.9,
+  "reviewCount": 245,
+  "price": 90,
+  "oldPrice": 100,
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.",
+  "colors": ["#3B1F0B", "#5B4636", "#FFFFFF", "#00B894", "#00BFFF"],
+  "selectedColor": "#3B1F0B",
+  "quantity": 4,
+  "sku": "FRNC87654ABC",
+  "tags": ["Furniture", "Office", "Gaming Chair", "Chair"],
+  "image": "/images/chair7.png",
+  "images": [
+    "/images/chair7.png",
+    "/images/chair7.png",
+    "/images/chair7.png",
+    "/images/chair7.png"
+  ]
+}
