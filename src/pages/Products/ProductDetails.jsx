@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useParams, useLocation } from 'react-router-dom';
 import productData from '../../data/productDetails.json';
 
@@ -69,16 +69,84 @@ const ProductDetails = () => {
   console.log('ProductDetails - productFromState:', productFromState);
   console.log('ProductDetails - location.state:', location.state);
   console.log('ProductDetails - id from params:', id);
+  console.log('ProductDetails - productFromState?.image:', productFromState?.image);
+  console.log('ProductDetails - productFromState?.name:', productFromState?.name);
+  console.log('ProductDetails - productFromState?.price:', productFromState?.price);
   
+  // Initialize wishlist from localStorage
+  const [wishlist, setWishlist] = useState(() => {
+    const savedWishlist = localStorage.getItem('wishlist');
+    return savedWishlist ? JSON.parse(savedWishlist) : [];
+  });
+
+  // Save wishlist to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem('wishlist', JSON.stringify(wishlist));
+    console.log('Wishlist saved to localStorage:', wishlist);
+    
+    // Dispatch custom event to notify navbar about wishlist update
+    window.dispatchEvent(new Event('wishlistUpdated'));
+  }, [wishlist]);
+
+  const toggleHeart = (product) => {
+    setWishlist((prevWishlist) => {
+      const isInWishlist = prevWishlist.some(item => item.id === product.id);
+      if (isInWishlist) {
+        return prevWishlist.filter(item => item.id !== product.id);
+      } else {
+        return [...prevWishlist, product];
+      }
+    });
+  };
+
+  // Initialize cart from localStorage
+  const [addCart, setAddCart] = useState(() => {
+    const savedCart = localStorage.getItem('cart');
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
+
+  // Save cart to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(addCart));
+    console.log('Cart saved to localStorage:', addCart);
+    
+    // Dispatch custom event to notify navbar about cart update
+    window.dispatchEvent(new Event('cartUpdated'));
+  }, [addCart]);
+
+  const handleAddCart = (product) => {
+    setAddCart((prevCart) => {
+      const existingItem = prevCart.find(item => item.id === product.id);
+      if (existingItem) {
+        // If item exists, increase quantity by the selected quantity
+        return prevCart.map(item => 
+          item.id === product.id 
+            ? { ...item, quantity: item.quantity + quantity }
+            : item
+        );
+      } else {
+        // If item doesn't exist, add it with the selected quantity
+        return [...prevCart, { ...product, quantity: quantity }];
+      }
+    });
+    
+    // Show success state
+    setCartSuccess(true);
+    setTimeout(() => setCartSuccess(false), 2000);
+    
+    // Show success message (you can add a toast notification here)
+    console.log(`Added ${quantity} ${product.name} to cart`);
+  };
+
   // Use product from state if available, otherwise fall back to static data
   const displayProduct = {
     ...productData, // Use static data as base
     ...productFromState, // Override with actual product data
-    producttitle: productFromState?.name || productData.producttitle,
-    title: productFromState?.name || productData.title,
+    producttitle: productFromState?.name || productFromState?.title || productData.producttitle,
+    title: productFromState?.name || productFromState?.title || productData.title,
     type: productFromState?.type || productData.type,
     price: productFromState?.price || productData.price,
-    oldPrice: productFromState?.oldPrice || productData.oldPrice,
+    oldPrice: productFromState?.oldPrice || productFromState?.originalPrice || productData.oldPrice,
     rating: productFromState?.rating || productData.rating,
     reviewCount: productFromState?.reviewCount || productData.reviewCount || 245,
     image: productFromState?.image || productData.image,
@@ -87,17 +155,26 @@ const ProductDetails = () => {
     colors: productFromState?.colors || productData.colors || ['#8B4513', '#A0522D', '#FFFFFF', '#008080', '#0000FF'],
     sku: productFromState?.sku || productData.sku || "FRNC87654ABC",
     tags: productFromState?.tags || productData.tags || ["Furniture", "Office", productFromState?.type || "Chair"],
-    inStock: productFromState?.inStock !== undefined ? productFromState.inStock : productData.inStock
+    inStock: productFromState?.inStock !== undefined ? productFromState.inStock : productData.inStock,
+    // Handle home page specific fields
+    category: productFromState?.category || productData.category,
+    discount: productFromState?.discount || productData.discount,
+    hasTimer: productFromState?.hasTimer || false
   };
   
   console.log('ProductDetails - displayProduct:', displayProduct);
   console.log('ProductDetails - selectedImage:', displayProduct.images?.[0] || displayProduct.image);
   console.log('ProductDetails - image path:', displayProduct.image);
+  console.log('ProductDetails - wishlist:', wishlist);
+  console.log('ProductDetails - addCart:', addCart);
+  console.log('ProductDetails - isInWishlist:', wishlist.some(item => item.id === displayProduct.id));
+  console.log('ProductDetails - isInCart:', addCart.some(item => item.id === displayProduct.id));
   
   const [selectedColor, setSelectedColor] = useState(displayProduct.selectedColor || '#8B4513');
   const [quantity, setQuantity] = useState(displayProduct.quantity || 1);
   const [selectedImage, setSelectedImage] = useState(displayProduct.images?.[0] || displayProduct.image);
   const [activeTab, setActiveTab] = useState(0);
+  const [cartSuccess, setCartSuccess] = useState(false);
 
   return (
     <>
@@ -227,14 +304,25 @@ const ProductDetails = () => {
               </div>
 
               {/* Action Buttons */}
-              <button className="bg-green-800 hover:bg-green-900 text-white px-8 py-3 rounded-full  text-base shadow transition">
-                Add To Cart
+              <button 
+                className={`px-8 py-3 rounded-full text-base shadow transition ${
+                  cartSuccess 
+                    ? 'bg-green-600 text-white' 
+                    : 'bg-green-800 hover:bg-green-900 text-white'
+                }`}
+                onClick={() => handleAddCart(displayProduct)}
+                disabled={cartSuccess}
+              >
+                {cartSuccess ? 'Added to Cart!' : 'Add To Cart'}
               </button>
               <button className="bg-yellow-500 hover:bg-yellow-500 text-gray-900 px-8 py-3 rounded-full text-base shadow transition">
                 Buy Now
               </button>
-              <button className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center">
-                <i className="far fa-heart text-gray-600 text-lg"></i>
+              <button 
+                className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition"
+                onClick={() => toggleHeart(displayProduct)}
+              >
+                <i className={`${wishlist.some(item => item.id === displayProduct.id) ? "fas" : "far"} fa-heart text-lg transition-all duration-300 ${wishlist.some(item => item.id === displayProduct.id) ? 'text-red-500' : 'text-gray-600'}`}></i>
               </button>
             </div>
 

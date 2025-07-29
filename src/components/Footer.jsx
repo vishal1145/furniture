@@ -16,26 +16,27 @@ const Footer = ({ data }) => {
           </div>
           <p className="text-sm text-gray-300 mb-4">{data.description}</p>
 <div className="flex justify-center space-x-2 mt-2">
-  {[
-    { name: 'Facebook', icon: 'fab fa-facebook-f' },
-    { name: 'Twitter', icon: 'fab fa-twitter' },
-    { name: 'Pinterest', icon: 'fab fa-pinterest-p' },
-    { name: 'Instagram', icon: 'fab fa-instagram' },
-    { name: 'YouTube', icon: 'fab fa-youtube' }
-  ].map((item, index) => (
-    <a key={index} href="#">
-      {/* Outermost transparent circle like water */}
-      <div className="w-10 h-10 rounded-full flex items-center justify-center bg-white/10 backdrop-blur-sm">
-        {/* Middle green circle */}
-        <div className="w-10 h-10 rounded-full bg-[#1e4d2b] flex items-center justify-center shadow-md">
-          {/* Inner white circle with icon */}
-          <div className="bg-white w-6 h-6 rounded-full flex items-center justify-center">
-            <i className={`${item.icon} text-[#1e4d2b] text-sm`}></i>
-          </div>
+{[
+  { name: 'Facebook', icon: 'fab fa-facebook-f', url: 'https://facebook.com/yourpage' },
+  { name: 'Twitter', icon: 'fab fa-twitter', url: 'https://twitter.com/yourhandle' },
+  { name: 'Pinterest', icon: 'fab fa-pinterest-p', url: 'https://pinterest.com/yourpage' },
+  { name: 'Instagram', icon: 'fab fa-instagram', url: 'https://instagram.com/yourprofile' },
+  { name: 'YouTube', icon: 'fab fa-youtube', url: 'https://youtube.com/yourchannel' }
+].map((item, index) => (
+  <a key={index} href={item.url} target="_blank" rel="noopener noreferrer">
+    {/* Outermost transparent circle like water */}
+    <div className="w-10 h-10 rounded-full flex items-center justify-center bg-white/10 backdrop-blur-sm">
+      {/* Middle green circle */}
+      <div className="w-10 h-10 rounded-full bg-[#1e4d2b] flex items-center justify-center shadow-md">
+        {/* Inner white circle with icon */}
+        <div className="bg-white w-6 h-6 rounded-full flex items-center justify-center">
+          <i className={`${item.icon} text-[#1e4d2b] text-sm`}></i>
         </div>
       </div>
-    </a>
-  ))}
+    </div>
+  </a>
+))}
+
 </div>
 
 

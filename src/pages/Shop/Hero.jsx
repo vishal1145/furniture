@@ -6,9 +6,115 @@ const PRODUCTS_PER_PAGE = 12;
 
 const ShopHero = ({ data }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = Math.ceil(data.products.length / PRODUCTS_PER_PAGE);
+  
+  // Filter states with localStorage persistence
+  const [selectedCategories, setSelectedCategories] = useState(() => {
+    const saved = localStorage.getItem('shopFilters_categories');
+    return saved ? JSON.parse(saved) : [];
+  });
 
-  const paginatedProducts = data.products.slice(
+  const [selectedColors, setSelectedColors] = useState(() => {
+    const saved = localStorage.getItem('shopFilters_colors');
+    return saved ? JSON.parse(saved) : '';
+  });
+
+  const [selectedMaterials, setSelectedMaterials] = useState(() => {
+    const saved = localStorage.getItem('shopFilters_materials');
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  const [selectedAvailability, setSelectedAvailability] = useState(() => {
+    const saved = localStorage.getItem('shopFilters_availability');
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  const [priceRange, setPriceRange] = useState(() => {
+    const saved = localStorage.getItem('shopFilters_priceRange');
+    return saved ? JSON.parse(saved) : data.filters.price.max;
+  });
+
+  const [activeFilters, setActiveFilters] = useState(() => {
+    const saved = localStorage.getItem('shopFilters_activeFilters');
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  const [sortBy, setSortBy] = useState(() => {
+    const saved = localStorage.getItem('shopFilters_sortBy');
+    return saved ? JSON.parse(saved) : 'Default';
+  });
+
+  // Filter products based on selected filters
+  const getFilteredProducts = () => {
+    let filtered = data.products.filter(product => {
+      // Category filter
+      if (selectedCategories.length > 0 && !selectedCategories.includes(product.type)) {
+        return false;
+      }
+      
+      // Color filter (assuming product has color property)
+      if (selectedColors && product.color !== selectedColors) {
+        return false;
+      }
+      
+      // Material filter (assuming product has material property)
+      if (selectedMaterials.length > 0 && !selectedMaterials.includes(product.material)) {
+        return false;
+      }
+      
+      // Availability filter
+      if (selectedAvailability.length > 0) {
+        const isInStock = selectedAvailability.includes('In Stock');
+        const isOutOfStock = selectedAvailability.includes('Out of Stock');
+        
+        if (isInStock && !product.inStock) return false;
+        if (isOutOfStock && product.inStock) return false;
+      }
+      
+      // Price filter
+      if (priceRange < data.filters.price.max && product.price > priceRange) {
+        return false;
+      }
+      
+      return true;
+    });
+
+    // Sort products based on selected sort option
+    switch (sortBy) {
+      case 'Price: Low to High':
+        filtered.sort((a, b) => a.price - b.price);
+        break;
+      case 'Price: High to Low':
+        filtered.sort((a, b) => b.price - a.price);
+        break;
+      case 'Name: A to Z':
+        filtered.sort((a, b) => a.name.localeCompare(b.name));
+        break;
+      case 'Name: Z to A':
+        filtered.sort((a, b) => b.name.localeCompare(a.name));
+        break;
+      case 'Rating: High to Low':
+        filtered.sort((a, b) => b.rating - a.rating);
+        break;
+      case 'Rating: Low to High':
+        filtered.sort((a, b) => a.rating - b.rating);
+        break;
+      case 'Newest First':
+        filtered.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
+        break;
+      case 'Oldest First':
+        filtered.sort((a, b) => new Date(a.date || 0) - new Date(b.date || 0));
+        break;
+      default:
+        // Default sorting (keep original order)
+        break;
+    }
+
+    return filtered;
+  };
+
+  const filteredProducts = getFilteredProducts();
+  const totalPages = Math.ceil(filteredProducts.length / PRODUCTS_PER_PAGE);
+  const paginatedFilteredProducts = filteredProducts.slice(
     (currentPage - 1) * PRODUCTS_PER_PAGE,
     currentPage * PRODUCTS_PER_PAGE
   );
@@ -58,6 +164,11 @@ const ShopHero = ({ data }) => {
     window.dispatchEvent(new Event('cartUpdated'));
   }, [addCart]);
 
+  // Reset current page when filters change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [selectedCategories, selectedColors, selectedMaterials, selectedAvailability, priceRange, sortBy]);
+
   const handleAddCart = (product) => {
     setAddCart((prevCart) => {
       const existingItem = prevCart.find(item => item.id === product.id);
@@ -75,7 +186,164 @@ const ShopHero = ({ data }) => {
     });
   };
 
-  // console.log(paginatedProducts);
+  // Sort handler
+  const handleSortChange = (sortOption) => {
+    setSortBy(sortOption);
+    localStorage.setItem('shopFilters_sortBy', JSON.stringify(sortOption));
+  };
+
+  // Filter handlers
+  const handleCategoryChange = (category) => {
+    const newCategories = selectedCategories.includes(category)
+      ? selectedCategories.filter(cat => cat !== category)
+      : [...selectedCategories, category];
+    
+    setSelectedCategories(newCategories);
+    localStorage.setItem('shopFilters_categories', JSON.stringify(newCategories));
+    updateActiveFilters();
+  };
+
+  const handleColorChange = (color) => {
+    const newColor = selectedColors === color ? '' : color;
+    setSelectedColors(newColor);
+    localStorage.setItem('shopFilters_colors', JSON.stringify(newColor));
+    updateActiveFilters();
+  };
+
+  const handleMaterialChange = (material) => {
+    const newMaterials = selectedMaterials.includes(material)
+      ? selectedMaterials.filter(mat => mat !== material)
+      : [...selectedMaterials, material];
+    
+    setSelectedMaterials(newMaterials);
+    localStorage.setItem('shopFilters_materials', JSON.stringify(newMaterials));
+    updateActiveFilters();
+  };
+
+  const handleAvailabilityChange = (availability) => {
+    const newAvailability = selectedAvailability.includes(availability)
+      ? selectedAvailability.filter(avail => avail !== availability)
+      : [...selectedAvailability, availability];
+    
+    setSelectedAvailability(newAvailability);
+    localStorage.setItem('shopFilters_availability', JSON.stringify(newAvailability));
+    updateActiveFilters();
+  };
+
+  const handlePriceChange = (value) => {
+    setPriceRange(value);
+    localStorage.setItem('shopFilters_priceRange', JSON.stringify(value));
+    updateActiveFilters();
+  };
+
+  const updateActiveFilters = () => {
+    const newActiveFilters = [];
+    
+    if (selectedCategories.length > 0) {
+      newActiveFilters.push({ 
+        type: 'categories', 
+        label: `Categories: ${selectedCategories.join(', ')}`,
+        value: selectedCategories 
+      });
+    }
+    
+    if (selectedColors) {
+      newActiveFilters.push({ 
+        type: 'color', 
+        label: `Color: ${selectedColors}`,
+        value: selectedColors 
+      });
+    }
+    
+    if (selectedMaterials.length > 0) {
+      newActiveFilters.push({ 
+        type: 'materials', 
+        label: `Materials: ${selectedMaterials.join(', ')}`,
+        value: selectedMaterials 
+      });
+    }
+    
+    if (selectedAvailability.length > 0) {
+      newActiveFilters.push({ 
+        type: 'availability', 
+        label: `Availability: ${selectedAvailability.join(', ')}`,
+        value: selectedAvailability 
+      });
+    }
+    
+    if (priceRange < data.filters.price.max) {
+      newActiveFilters.push({ 
+        type: 'price', 
+        label: `Price: $0 - $${priceRange}`,
+        value: priceRange 
+      });
+    }
+
+    if (sortBy !== 'Default') {
+      newActiveFilters.push({ 
+        type: 'sort', 
+        label: `Sort: ${sortBy}`,
+        value: sortBy 
+      });
+    }
+    
+    setActiveFilters(newActiveFilters);
+    localStorage.setItem('shopFilters_activeFilters', JSON.stringify(newActiveFilters));
+  };
+
+  const clearAllFilters = () => {
+    setSelectedCategories([]);
+    setSelectedColors('');
+    setSelectedMaterials([]);
+    setSelectedAvailability([]);
+    setPriceRange(data.filters.price.max);
+    setActiveFilters([]);
+    setSortBy('Default');
+    
+    // Clear localStorage
+    localStorage.removeItem('shopFilters_categories');
+    localStorage.removeItem('shopFilters_colors');
+    localStorage.removeItem('shopFilters_materials');
+    localStorage.removeItem('shopFilters_availability');
+    localStorage.removeItem('shopFilters_priceRange');
+    localStorage.removeItem('shopFilters_activeFilters');
+    localStorage.removeItem('shopFilters_sortBy');
+  };
+
+  const removeFilter = (filterType, filterValue) => {
+    switch (filterType) {
+      case 'categories':
+        const newCategories = selectedCategories.filter(cat => cat !== filterValue);
+        setSelectedCategories(newCategories);
+        localStorage.setItem('shopFilters_categories', JSON.stringify(newCategories));
+        break;
+      case 'color':
+        setSelectedColors('');
+        localStorage.setItem('shopFilters_colors', JSON.stringify(''));
+        break;
+      case 'materials':
+        const newMaterials = selectedMaterials.filter(mat => mat !== filterValue);
+        setSelectedMaterials(newMaterials);
+        localStorage.setItem('shopFilters_materials', JSON.stringify(newMaterials));
+        break;
+      case 'availability':
+        const newAvailability = selectedAvailability.filter(avail => avail !== filterValue);
+        setSelectedAvailability(newAvailability);
+        localStorage.setItem('shopFilters_availability', JSON.stringify(newAvailability));
+        break;
+      case 'price':
+        setPriceRange(data.filters.price.max);
+        localStorage.setItem('shopFilters_priceRange', JSON.stringify(data.filters.price.max));
+        break;
+      case 'sort':
+        setSortBy('Default');
+        localStorage.setItem('shopFilters_sortBy', JSON.stringify('Default'));
+        break;
+      default:
+        break;
+    }
+    updateActiveFilters();
+  };
 
   // Helper to render page numbers like: 1 2 3 ... 10
   const renderPageNumbers = () => {
@@ -114,7 +382,12 @@ const ShopHero = ({ data }) => {
               {data.filters.categories.map((cat) => (
                 <li key={cat}>
                   <label className="flex items-center gap-2">
-                    <input type="checkbox" className="accent-green-900" />
+                    <input 
+                      type="checkbox" 
+                      className="accent-green-900"
+                      checked={selectedCategories.includes(cat)}
+                      onChange={() => handleCategoryChange(cat)}
+                    />
                     <span>{cat}</span>
                   </label>
                 </li>
@@ -125,12 +398,14 @@ const ShopHero = ({ data }) => {
           <div className="border-b pb-6 mb-6">
             <h3 className="font-medium mb-2">Price</h3>
             <div className="mb-2 text-sm text-gray-700">
-              ${data.filters.price.min}.00 - ${data.filters.price.max}.00
+              ${data.filters.price.min}.00 - ${priceRange}.00
             </div>
             <input
               type="range"
               min={data.filters.price.min}
               max={data.filters.price.max}
+              value={priceRange}
+              onChange={(e) => handlePriceChange(parseInt(e.target.value))}
               className="w-full accent-green-900"
             />
           </div>
@@ -145,6 +420,8 @@ const ShopHero = ({ data }) => {
                       type="radio"
                       name="color"
                       className="accent-green-900"
+                      checked={selectedColors === color}
+                      onChange={() => handleColorChange(color)}
                     />
                     <span
                       className={`inline-block w-3 h-3 rounded-full border ${
@@ -176,7 +453,12 @@ const ShopHero = ({ data }) => {
               {data.filters.materials.map((material) => (
                 <li key={material}>
                   <label className="flex items-center gap-2">
-                    <input type="checkbox" className="accent-green-900" />
+                    <input 
+                      type="checkbox" 
+                      className="accent-green-900"
+                      checked={selectedMaterials.includes(material)}
+                      onChange={() => handleMaterialChange(material)}
+                    />
                     <span>{material}</span>
                   </label>
                 </li>
@@ -190,7 +472,12 @@ const ShopHero = ({ data }) => {
               {data.filters.availablity.map((option) => (
                 <li key={option.label}>
                   <label className="flex items-center gap-2">
-                    <input type="checkbox" className="accent-green-900" />
+                    <input 
+                      type="checkbox" 
+                      className="accent-green-900"
+                      checked={selectedAvailability.includes(option.label)}
+                      onChange={() => handleAvailabilityChange(option.label)}
+                    />
                     <span>{option.label}</span>
                   </label>
                 </li>
@@ -204,13 +491,17 @@ const ShopHero = ({ data }) => {
           {/* Top Bar */}
           <div className="flex flex-wrap items-center justify-between mb-4">
             <div className="text-gray-700 text-sm">
-              Showing {data.results.showing} of {data.results.total} results
+              Showing {paginatedFilteredProducts.length} of {filteredProducts.length} results
             </div>
             <div className="flex items-center gap-2 px-0 md:px-16">
               <span className="text-gray-700 text-sm">Sort by :</span>
-              <select className="border bg-white rounded-full px-2 py-1 text-sm">
+              <select 
+                className="border bg-white rounded-full px-2 py-1 text-sm"
+                value={sortBy}
+                onChange={(e) => handleSortChange(e.target.value)}
+              >
                 {data.sortOptions.map((opt) => (
-                  <option key={opt}>{opt}</option>
+                  <option key={opt} value={opt}>{opt}</option>
                 ))}
               </select>
             </div>
@@ -218,22 +509,32 @@ const ShopHero = ({ data }) => {
           {/* Active Filters */}
           <div className="flex flex-wrap items-center gap-2 mb-4">
             <span className="text-gray-700 text-sm">Active Filter</span>
-            {data.activeFilters.map((filter) => (
+            {activeFilters.map((filter, index) => (
               <span
-                key={filter.label}
+                key={index}
                 className="bg-yellow-500 text-black rounded-full text-xs px-2 p-1 flex items-center gap-1"
               >
                 {filter.label}{" "}
-                <span className="ml-1 cursor-pointer">&times;</span>
+                <span 
+                  className="ml-1 cursor-pointer"
+                  onClick={() => removeFilter(filter.type, filter.value)}
+                >
+                  &times;
+                </span>
               </span>
             ))}
-            <button className="text-green-900 text-sm underline ml-2">
-              Clear All
-            </button>
+            {activeFilters.length > 0 && (
+              <button 
+                className="text-green-900 text-sm underline ml-2"
+                onClick={clearAllFilters}
+              >
+                Clear All
+              </button>
+            )}
           </div>
           {/* Product Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 ">
-            {paginatedProducts.map((product, idx) => {
+            {paginatedFilteredProducts.map((product, idx) => {
               const isFilled = wishlist.some(item => item.id === product.id);
               console.log('Rendering product:', product);
               console.log('Product image path:', product.image);

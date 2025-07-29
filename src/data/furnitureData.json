@@ -8,7 +8,7 @@
     "menuItems": [
       { "name": "Home", "href": "/" },
       { "name": "Shop", "href": "/shop" },
-      { "name": "Categories", "href": "#" },
+     
       { "name": "About Us", "href": "/aboutus" },
       { "name": "Contact Us", "href": "/contact" },
       { "name": "Blogs", "href": "/blog" }
@@ -167,7 +167,7 @@
         "originalPrice": 160.0,
         "discount": "50% off",
         "rating": 4.9,
-        "image": "images/chair2.png",
+        "image": "/images/chair2.png",
         "hasTimer": true,
         "timer": {
           "days": 5,
@@ -185,7 +185,7 @@
         "originalPrice": 140.0,
         "discount": "21% off",
         "rating": 4.8,
-        "image": "images/Rocking_Chair3-removebg-preview.png"
+        "image": "/images/Rocking_Chair3-removebg-preview.png"
       },
       {
         "id": 3,
@@ -196,7 +196,7 @@
         "originalPrice": 80.0,
         "discount": "25% off",
         "rating": 4.7,
-        "image": "images/Tble.png"
+        "image": "/images/Tble.png"
       },
       {
         "id": 4,
@@ -207,7 +207,7 @@
         "originalPrice": 150.0,
         "discount": "20% off",
         "rating": 4.6,
-        "image": "images/bean bag.png"
+        "image": "/images/bean bag.png"
       },
       {
         "id": 5,
@@ -218,7 +218,7 @@
         "originalPrice": 130.0,
         "discount": "30% off",
         "rating": 4.7,
-        "image": "images/sofaa2.png"
+        "image": "/images/sofaa2.png"
       },
       {
         "id": 6,
@@ -229,7 +229,7 @@
         "originalPrice": 120.0,
         "discount": "15% off",
         "rating": 4.5,
-        "image": "images/roking chair.png"
+        "image": "/images/roking chair.png"
       },
       {
         "id": 7,
@@ -240,7 +240,7 @@
         "originalPrice": 250.0,
         "discount": "20% off",
         "rating": 5.0,
-        "image": "images/lamp3-removebg-preview.png"
+        "image": "/images/lamp3-removebg-preview.png"
       },
       {
         "id": 8,
@@ -251,7 +251,7 @@
         "originalPrice": 170.0,
         "discount": "23% off",
         "rating": 4.6,
-        "image": "images/chair9.png"
+        "image": "/images/chair9.png"
       },
       {
         "id": 9,
@@ -262,7 +262,7 @@
         "originalPrice": 45.0,
         "discount": "33% off",
         "rating": 4.2,
-        "image": "images/bean.png"
+        "image": "/images/bean-removebg-preview.png"
       },
       {
         "id": 10,
@@ -273,7 +273,7 @@
         "originalPrice": 130.0,
         "discount": "25% off",
         "rating": 4.6,
-        "image": "images/Rocking Chair.png"
+        "image": "/images/Rocking Chair.png"
       },
       {
         "id": 11,
@@ -284,7 +284,7 @@
         "originalPrice": 180.0,
         "discount": "40% off",
         "rating": 4.8,
-        "image": "images/door2.png"
+        "image": "/images/door2.png"
       },
       {
         "id": 12,
@@ -295,7 +295,7 @@
         "originalPrice": 180.0,
         "discount": "22% off",
         "rating": 4.9,
-        "image": "images/Rocking Chair2.png"
+        "image": "/images/Rocking Chair2.png"
       }
     ]
   },
@@ -329,7 +329,7 @@
         "originalPrice": 150.0,
         "discount": "30% off",
         "rating": 5.0,
-        "image": "images/chair3.png",
+        "image": "/images/chair3.png",
         "description": "The Recliner Chair Wood combines timeless elegance with exceptional comfort, featuring sturdy craftsmanship and a cozy design ideal for relaxation."
       },
       {
@@ -341,7 +341,7 @@
         "originalPrice": 180.0,
         "discount": "22% off",
         "rating": 4.9,
-        "image": "images/Rocking Chair2.png",
+        "image": "/images/Rocking Chair2.png",
         "description": "The Minimalist Desk offers sleek, modern design with clean lines, perfect for small spaces and boosting productivity in style."
       },
       {
@@ -353,7 +353,7 @@
         "originalPrice": 130.0,
         "discount": "25% off",
         "rating": 4.6,
-        "image": "images/Rocking Chair.png",
+        "image": "/images/Rocking Chair.png",
         "description": "The Classic Rocking Chair blends vintage charm with ergonomic comfort, offering a soothing motion perfect for relaxation or cozy reading corners."
       }
     ]
@@ -364,7 +364,7 @@
       "title": "Latest Gaming Chairs",
       "subtitle": "Flat 20% Discount",
       "description": "The gaming chair offers ergonomic comfort, sleek design, and strong support, making it ideal for long gaming or work sessions",
-      "image": "images/chair5.png",
+      "image": "/images/chair5.png",
       "color": "gray"
     },
     {
@@ -372,7 +372,7 @@
       "title": "Wood Chair Collection",
       "subtitle": "Flat 15% Discount",
       "description": "The Wood Chair Collection blends timeless craftsmanship with natural elegance, offering durable, stylish seating perfect for both modern and classic interiors",
-      "image": "images/chair6.png",
+      "image": "/images/chair6.png",
       "color": "yellow"
     }
   ],
@@ -515,8 +515,8 @@
       "Company": [
         { "name": "About Us", "href": "/aboutus" },
         { "name": "Blog", "href": "/blog" },
-        { "name": "Contact Us", "href": "/contact" },
-        { "name": "Career", "href": "#" }
+        { "name": "Contact Us", "href": "/contact" }
+       
       ],
       "Customer Services": [
         { "name": "My Account", "href": "/myaccount" },
