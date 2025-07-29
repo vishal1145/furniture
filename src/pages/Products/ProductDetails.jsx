@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useLocation } from 'react-router-dom';
 import productData from '../../data/productDetails.json';
 
 import RelatedProducts from '../../components/RelatedProducts';
@@ -63,16 +63,47 @@ const reviews = [
 
 const ProductDetails = () => {
   const { id } = useParams();
-  const [selectedColor, setSelectedColor] = useState(productData.selectedColor);
-  const [quantity, setQuantity] = useState(productData.quantity);
-  const [selectedImage, setSelectedImage] = useState(productData.images?.[0] || productData.image);
+  const location = useLocation();
+  const productFromState = location.state?.productData;
+  
+  console.log('ProductDetails - productFromState:', productFromState);
+  console.log('ProductDetails - location.state:', location.state);
+  console.log('ProductDetails - id from params:', id);
+  
+  // Use product from state if available, otherwise fall back to static data
+  const displayProduct = {
+    ...productData, // Use static data as base
+    ...productFromState, // Override with actual product data
+    producttitle: productFromState?.name || productData.producttitle,
+    title: productFromState?.name || productData.title,
+    type: productFromState?.type || productData.type,
+    price: productFromState?.price || productData.price,
+    oldPrice: productFromState?.oldPrice || productData.oldPrice,
+    rating: productFromState?.rating || productData.rating,
+    reviewCount: productFromState?.reviewCount || productData.reviewCount || 245,
+    image: productFromState?.image || productData.image,
+    images: productFromState?.images || [productFromState?.image || productData.image],
+    description: productFromState?.description || productData.description || "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    colors: productFromState?.colors || productData.colors || ['#8B4513', '#A0522D', '#FFFFFF', '#008080', '#0000FF'],
+    sku: productFromState?.sku || productData.sku || "FRNC87654ABC",
+    tags: productFromState?.tags || productData.tags || ["Furniture", "Office", productFromState?.type || "Chair"],
+    inStock: productFromState?.inStock !== undefined ? productFromState.inStock : productData.inStock
+  };
+  
+  console.log('ProductDetails - displayProduct:', displayProduct);
+  console.log('ProductDetails - selectedImage:', displayProduct.images?.[0] || displayProduct.image);
+  console.log('ProductDetails - image path:', displayProduct.image);
+  
+  const [selectedColor, setSelectedColor] = useState(displayProduct.selectedColor || '#8B4513');
+  const [quantity, setQuantity] = useState(displayProduct.quantity || 1);
+  const [selectedImage, setSelectedImage] = useState(displayProduct.images?.[0] || displayProduct.image);
   const [activeTab, setActiveTab] = useState(0);
 
   return (
     <>
       {/* ✅ Navbar */}
       <Navbar data={furnitureData.navigation} />
-      <HeaderFile data={productData} />
+      <HeaderFile data={displayProduct} />
       {/* ✅ Main Product Content */}
       <div className="bg-white  flex items-center justify-center py-8 px-2">
         <div className="max-w-7xl w-full bg-white rounded-2xl  p-6 flex flex-col md:flex-row gap-10">
@@ -85,9 +116,13 @@ const ProductDetails = () => {
                 &#60;
               </button>
                 <img
-                  src={selectedImage}
-                  alt={productData.title}
+                  src={selectedImage || displayProduct.image || '/images/chair2.png'}
+                  alt={displayProduct.title || 'Product Image'}
                   className="w-[600px] h-[500px] object-contain"
+                  onError={(e) => {
+                    console.error('Image failed to load:', selectedImage);
+                    e.target.src = '/images/chair2.png'; // Fallback image
+                  }}
                 />
                  <button className="bg-yellow-500 text-white w-12 h-12 rounded-md flex items-center justify-center text-2xl">
                 &#62;
@@ -97,7 +132,7 @@ const ProductDetails = () => {
             </div>
             {/* --- Gallery Thumbnails ---   import RelatedProducts from '../../components/RelatedProducts';*/}
             <div className="flex gap-4 mt-6">
-              {productData.images?.map((img, idx) => (
+              {displayProduct.images?.map((img, idx) => (
                 <button
                   key={img}
                   onClick={() => setSelectedImage(img)}
@@ -108,9 +143,13 @@ const ProductDetails = () => {
                   style={{ outline: 'none' }}
                 >
                   <img
-                    src={img}
+                    src={img || '/images/chair2.png'}
                     alt={`Thumbnail ${idx + 1}`}
                     className="w-24 h-24 object-contain rounded-xl"
+                    onError={(e) => {
+                      console.error('Thumbnail failed to load:', img);
+                      e.target.src = '/images/chair2.png'; // Fallback image
+                    }}
                   />
                 </button>
               ))}
@@ -119,10 +158,10 @@ const ProductDetails = () => {
 
           {/* Details */}
           <div className="flex-1 flex flex-col gap-2">
-            <span className="text-gray-900 text-xl mb-1">{productData.type}</span>
+            <span className="text-gray-900 text-xl mb-1">{displayProduct.type}</span>
             <div className="flex items-center gap-2">
-              <h2 className="text-3xl font-medium text-gray-900">{productData.producttitle}</h2>
-              {productData.inStock && (
+              <h2 className="text-3xl font-medium text-gray-900">{displayProduct.producttitle}</h2>
+              {displayProduct.inStock && (
                <span className="ml-2 bg-green-100 text-green-900 text-sm px-4 py-1 border border-green-300 rounded-full font-semibold">
   In Stock
 </span>
@@ -136,23 +175,23 @@ const ProductDetails = () => {
                   <FaStar key={i} />
                 ))}
               </span>
-              <span className=" text-xl   text-gray-900">{productData.rating}</span>
-              <span className="text-gray-900 text-xl">({productData.reviewCount} Review)</span>
+              <span className=" text-xl   text-gray-900">{displayProduct.rating}</span>
+              <span className="text-gray-900 text-xl">({displayProduct.reviewCount} Review)</span>
             </div>
 
             {/* Price */}
             <div className="flex items-center gap-4 mt-2">
-              <span className="text-2xl font-bold text-gray-900">${productData.price.toFixed(2)}</span>
-              <span className="text-gray-400 line-through text-lg">${productData.oldPrice.toFixed(2)}</span>
+              <span className="text-2xl font-bold text-gray-900">${displayProduct.price.toFixed(2)}</span>
+              <span className="text-gray-400 line-through text-lg">${displayProduct.oldPrice.toFixed(2)}</span>
             </div>
 
             {/* Description */}
-            <p className="text-gray-500 text-xl mt-2">{productData.description}</p>
+            <p className="text-gray-500 text-xl mt-2">{displayProduct.description}</p>
 
             {/* Color */}
             <div className="flex items-center gap-2 mt-4">
               <span className="font-semibold text-gray-900">Color :</span>
-              {productData.colors.map((color) => (
+              {displayProduct.colors.map((color) => (
                 <button
                   key={color}
                   className={`w-6 h-6 rounded-full border-2 ${selectedColor === color ? 'border-green-700' : 'border-gray-300'} mx-1`}
@@ -201,10 +240,10 @@ const ProductDetails = () => {
 
             {/* SKU, Tags, Share */}
             <div className="mt-6 text-sm text-gray-700">
-              <div className="mb-1">SKU : <span className="font-semibold">{productData.sku}</span></div>
+              <div className="mb-1">SKU : <span className="font-semibold">{displayProduct.sku}</span></div>
               <div className="mb-1">
-                Tags : {productData.tags.map((tag, idx) => (
-                  <span key={tag} className="inline-block mr-1">{tag}{idx < productData.tags.length - 1 ? ',' : ''}</span>
+                Tags : {displayProduct.tags.map((tag, idx) => (
+                  <span key={tag} className="inline-block mr-1">{tag}{idx < displayProduct.tags.length - 1 ? ',' : ''}</span>
                 ))}
               </div>
               <div className="flex items-center gap-2 mt-2 ">

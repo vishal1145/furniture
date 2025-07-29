@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
+import { Link,  useNavigate  } from "react-router-dom";
+
 
 const Navbar = ({ data }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [wishlistCount, setWishlistCount] = useState(0);
   const [cartCount, setCartCount] = useState(0);
-
+const navigate = useNavigate();
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
@@ -61,7 +62,9 @@ const Navbar = ({ data }) => {
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between w-full">
           {/* Logo */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2"
+           onClick={() => navigate('/')}>
+
             <div className="bg-green-800 w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm">
               {data.logo.icon}
             </div>

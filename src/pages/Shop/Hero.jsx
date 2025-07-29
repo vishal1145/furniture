@@ -235,10 +235,13 @@ const ShopHero = ({ data }) => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 ">
             {paginatedProducts.map((product, idx) => {
               const isFilled = wishlist.some(item => item.id === product.id);
+              console.log('Rendering product:', product);
+              console.log('Product image path:', product.image);
               return (
                 <Link
                   key={product.id}
-                  to={`/shop/${product.type.toLowerCase()}/product-details`}
+                  to={`/shop/${product.type.toLowerCase()}/product-details/${product.id}`}
+                  state={{ productData: product }}
                   className="bg-white rounded-xl shadow-sm relative group transition-all duration-200 hover:shadow-md cursor-pointer"
                 >
                   {/* Discount badge */}
@@ -251,6 +254,7 @@ const ShopHero = ({ data }) => {
                       className="bg-white p-1 rounded-full shadow-md hover:bg-gray-50"
                       onClick={(e) => {
                         e.preventDefault();
+                        e.stopPropagation();
                         toggleHeart(product);
                       }}
                     >
@@ -259,8 +263,6 @@ const ShopHero = ({ data }) => {
                           isFilled ? "fas" : "far"
                         } fa-heart text-gray-600 text-sm transition-all duration-300`}
                       ></i>
-
-                      {/* <i className="far fa-heart text-gray-600 text-sm"></i> */}
                     </button>
                     <button
                       className="bg-white p-1 rounded-full shadow-md hover:bg-gray-50"
@@ -271,12 +273,12 @@ const ShopHero = ({ data }) => {
                     <button
                       onClick={(e) => {
                         e.preventDefault();
+                        e.stopPropagation();
                         handleAddCart(product);
                       }}
                       className="bg-white p-1 rounded-full shadow-md hover:bg-gray-50"
-                      // onClick={(e) => e.preventDefault()}
                     >
-                      <i className="fas fa-lock text-gray-600 text-sm"></i>
+                      <i className="fas fa-shopping-cart text-gray-600 text-sm"></i>
                     </button>
                   </div>
                   {/* Product Image with gray-50 background */}
