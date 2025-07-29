@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = ({ data }) => {
   return (
     <footer className="bg-green-900 text-white pt-16">
-      <div className="max-w-7xl mx-auto  grid grid-cols-1 md:grid-cols-5 gap-10 text-left">
+      <div className="max-w-7xl mx-auto px-3 grid grid-cols-1 md:grid-cols-5 gap-10 text-left">
         {/* Logo and Description */}
         <div className="text-center md:text-left">
           <div className="flex items-center mb-4 justify-center md:justify-start">

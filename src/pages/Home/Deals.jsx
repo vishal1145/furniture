@@ -1,6 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 
 const Deals = ({ data }) => {
+const navigate = useNavigate ();
+
+const openProductDetails = (item) => {
+  navigate(`/shop/${item.type}/product-details`);
+};
   return (
     <section className="px-6 sm:px-12 lg:px-32 py-16 bg-white">
       <div className="max-w-7xl mx-auto">
@@ -71,7 +78,8 @@ const Deals = ({ data }) => {
       </p>
     </div>
 
-    <button className="text-green-900 text-sm font-medium flex items-center gap-1 hover:underline ">
+    <button onClick={() => openProductDetails(deal)}
+     className="text-green-900 text-sm font-medium flex items-center gap-1 hover:underline ">
       Shop Now <i className="fas fa-arrow-right text-xs"></i>
     </button>
   </div>

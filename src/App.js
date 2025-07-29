@@ -8,7 +8,8 @@ import Checkout from './pages/Checkout/Checkout';
 import Payment from './pages/Payment/Payment';
 import ContactUs from './pages/Contact/ContactUs';
 import Wishlist from './pages/Wishlist/Wishlist';
-import FAQ from './pages/FAQ/Faq';
+import Faq from './pages/FAQ/Faq.jsx';
+// import FAQ from './pages/Home/FAQ';
 import About from './pages/About/AboutUs'
 import TrackOrder from './pages/Trackorder/TrackOrder';
 import TrackResults from './pages/Trackorder/TrackResults';
@@ -29,7 +30,7 @@ function App() {
         <Route path="/payment" element={<Payment/>}/>
         <Route path="/contact" element={<ContactUs/>}/>
         <Route path="/wishlist" element={<Wishlist/>}/>
-        <Route path="/faq" element={<FAQ/>}/>
+        <Route path="/faq" element={<Faq />}/>
         <Route path="/aboutus" element={<About/>}/>
         <Route path="/trackorder" element={<TrackOrder/>}/>
         <Route path="/track-results" element={<TrackResults/>}/>

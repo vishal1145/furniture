@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import faqData from './faq.json';
+import faqData from "../../data/faq.json";
 import furnitureData from "../../data/furnitureData.json";
 import Navbar from "../../components/Navbar";
 import Header from '../../components/Header';

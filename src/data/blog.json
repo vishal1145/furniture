@@ -76,6 +76,150 @@
       "date": "01 April 2024",
       "image": "/images/bed room.jpg",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+    },
+    {
+      "id": 10,
+      "slug": "furniture-trends-2024",
+      "title": "Furniture Trends 2024: What's Hot and What's Not",
+      "date": "15 April 2024",
+      "image": "/images/ChatGPT Image Jul 7, 2025, 01_35_08 PM.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+    },
+    {
+      "id": 11,
+      "slug": "ultimate-guide-choosing-perfect-sofa",
+      "title": "The Ultimate Guide to Choosing the Perfect Sofa",
+      "date": "14 April 2024",
+      "image": "/images/ChatGPT Image Jul 7, 2025, 01_40_26 PM.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+    },
+    {
+      "id": 12,
+      "slug": "choosing-right-dining-table",
+      "title": "Choosing the Right Dining Table for Your Lifestyle",
+      "date": "12 April 2024",
+      "image": "/images/ChatGPT Image Jul 7, 2025, 01_45_10 PM.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+    },
+    {
+      "id": 13,
+      "slug": "cozy-reading-nook",
+      "title": "Creating a Cozy Reading Nook at Home",
+      "date": "04 April 2024",
+      "image": "/images/sofa1.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+    },
+    {
+      "id": 14,
+      "slug": "smart-furniture-interior-design",
+      "title": "The Future of Smart Furniture in Interior Design",
+      "date": "02 April 2024",
+      "image": "/images/ChatGPT Image Jul 7, 2025, 01_35_08 PM.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+    },
+    {
+      "id": 15,
+      "slug": "scandinavian-interiors",
+      "title": "Styling Tips for Scandinavian Interiors",
+      "date": "01 April 2024",
+      "image": "/images/bed room.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+    },
+    {
+      "id": 16,
+      "slug": "maximizing-small-spaces",
+      "title": "Maximizing Small Spaces with Smart Furniture",
+      "date": "10 April 2024",
+      "image": "/images/geastromm.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+    },
+    {
+      "id": 17,
+      "slug": "style-modern-minimalist-living-room",
+      "title": "How to Style a Modern Minimalist Living Room",
+      "date": "08 April 2024",
+      "image": "/images/livingroom.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+    },
+    {
+      "id": 18,
+      "slug": "eco-friendly-furniture-brands",
+      "title": "Top 10 Eco-Friendly Furniture Brands in 2024",
+      "date": "06 April 2024",
+      "image": "/images/livingroom2.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+    },
+    {
+      "id": 19,
+      "slug": "maximizing-small-spaces",
+      "title": "Maximizing Small Spaces with Smart Furniture",
+      "date": "10 April 2024",
+      "image": "/images/geastromm.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+    },
+    {
+      "id": 20,
+      "slug": "style-modern-minimalist-living-room",
+      "title": "How to Style a Modern Minimalist Living Room",
+      "date": "08 April 2024",
+      "image": "/images/livingroom.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+    },
+    {
+      "id": 21,
+      "slug": "eco-friendly-furniture-brands",
+      "title": "Top 10 Eco-Friendly Furniture Brands in 2024",
+      "date": "06 April 2024",
+      "image": "/images/livingroom2.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+    },
+    {
+      "id": 22,
+      "slug": "cozy-reading-nook",
+      "title": "Creating a Cozy Reading Nook at Home",
+      "date": "04 April 2024",
+      "image": "/images/sofa1.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+    },
+    {
+      "id": 23,
+      "slug": "smart-furniture-interior-design",
+      "title": "The Future of Smart Furniture in Interior Design",
+      "date": "02 April 2024",
+      "image": "/images/ChatGPT Image Jul 7, 2025, 01_35_08 PM.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+    },
+    {
+      "id": 24,
+      "slug": "scandinavian-interiors",
+      "title": "Styling Tips for Scandinavian Interiors",
+      "date": "01 April 2024",
+      "image": "/images/bed room.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+    },
+    {
+      "id": 25,
+      "slug": "furniture-trends-2024",
+      "title": "Furniture Trends 2024: What's Hot and What's Not",
+      "date": "15 April 2024",
+      "image": "/images/ChatGPT Image Jul 7, 2025, 01_35_08 PM.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+    },
+    {
+      "id": 26,
+      "slug": "ultimate-guide-choosing-perfect-sofa",
+      "title": "The Ultimate Guide to Choosing the Perfect Sofa",
+      "date": "14 April 2024",
+      "image": "/images/ChatGPT Image Jul 7, 2025, 01_40_26 PM.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+    },
+    {
+      "id": 27,
+      "slug": "choosing-right-dining-table",
+      "title": "Choosing the Right Dining Table for Your Lifestyle",
+      "date": "12 April 2024",
+      "image": "/images/ChatGPT Image Jul 7, 2025, 01_45_10 PM.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
     }
   ],
   "blogDetails": [

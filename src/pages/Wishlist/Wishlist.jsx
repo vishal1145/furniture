@@ -1,20 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import wishlistData from "../../data/wishlist.json";
 import furnitureData from "../../data/furnitureData.json";
 import Navbar from "../../components/Navbar";
-import Header from '../../components/Header';
+import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Features from "../../components/Features";
 const Wishlist = () => {
   const [wishlistItems, setWishlistItems] = useState(wishlistData.products);
 
   const removeItem = (id) => {
-    setWishlistItems(wishlistItems.filter(item => item.id !== id));
+    setWishlistItems(wishlistItems.filter((item) => item.id !== id));
+  };
+
+  const [wishlist, setWishlist] = useState([]);
+  console.log(wishlist);
+
+  const handleAddCart = (item) => {
+    setWishlist((prevWishlist) =>
+      prevWishlist.includes(item)
+        ? prevWishlist.filter((itemId) => itemId !==item.id)
+        : [...prevWishlist, item]
+    );
   };
 
   return (
     <>
-    <Navbar data={furnitureData.navigation} />
+      <Navbar data={furnitureData.navigation} />
       <Header data={wishlistData} />
 
       <div className="max-w-7xl mx-auto px-4 py-10">
@@ -60,7 +71,9 @@ const Wishlist = () => {
               </div>
             </div>
             {/* Price */}
-            <span className="text-gray-900 font-semibold text-center">${item.price.toFixed(2)}</span>
+            <span className="text-gray-900 font-semibold text-center">
+              ${item.price.toFixed(2)}
+            </span>
             {/* Date Added */}
             <span className="text-gray-900 text-center">{item.dateAdded}</span>
             {/* Stock Status */}
@@ -68,6 +81,7 @@ const Wishlist = () => {
             {/* Add to Cart Button */}
             <div className="flex justify-center">
               <button
+              onClick={() => handleAddCart(item)} 
                 className="bg-green-900 text-white py-2 px-4  rounded-full hover:bg-green-800 transition"
                 // onClick={() => alert(`Added ${item.name} to cart!`)}
               >
@@ -104,7 +118,7 @@ const Wishlist = () => {
           </div>
         </div>
       </div>
-      <Features data={furnitureData.features}/>
+      <Features data={furnitureData.features} />
       {/* ✅ Footer */}
       <Footer data={furnitureData.footer} />
     </>

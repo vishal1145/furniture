@@ -6,7 +6,7 @@
       "icon": "F"
     },
     "menuItems": [
-      { "name": "Home", "href": "/"},
+      { "name": "Home", "href": "/" },
       { "name": "Shop", "href": "/shop" },
       { "name": "Categories", "href": "#" },
       { "name": "About Us", "href": "/aboutus" },
@@ -24,7 +24,7 @@
       "accent": "Modern",
       "subtitle": "Furniture Collection"
     },
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+    "description": "Discover sleek designs and timeless elegance in our modern furniture collection, perfect for contemporary living spaces.",
     "buttons": {
       "primary": "Shop Now",
       "secondary": "View All Products"
@@ -42,6 +42,7 @@
     },
     "cards": [
       {
+        "type":"geust-room",
         "title": "Geust Room",
         "image": "/images/bed room.jpg",
         "price": "$499",
@@ -49,6 +50,7 @@
         "color": "green"
       },
       {
+        "type":"living-room",
         "title": "Living Room",
         "image": "/images/livingroom.jpg",
         "price": "$199",
@@ -56,6 +58,7 @@
         "color": "yellow"
       },
       {
+        "type":"bed-room-3",
         "title": "Bed Room 3",
         "image": "/images/livingroom2.png",
         "price": "$299",
@@ -63,6 +66,7 @@
         "color": "green"
       },
       {
+        "type":"bed-room-4",
         "title": "Bed Room 4",
         "image": "/images/ChatGPT Image Jul 7, 2025, 01_40_26 PM.png",
         "price": "$399",
@@ -70,6 +74,7 @@
         "color": "yellow"
       },
       {
+        "type":"geust-room-5",
         "title": "Geust Room  5",
         "image": "/images/ChatGPT Image Jul 7, 2025, 01_35_08 PM.png",
         "price": "$599",
@@ -77,6 +82,7 @@
         "color": "green"
       },
       {
+        "type":"living-room-6",
         "title": "Living Room 6",
         "image": "/images/ChatGPT Image Jul 7, 2025, 01_45_10 PM.png",
         "price": "$699",
@@ -155,9 +161,10 @@
       {
         "id": 1,
         "name": "Wooden Sofa Chair",
+        "type": "latest products",
         "category": "Chair",
-        "price": 80.00,
-        "originalPrice": 160.00,
+        "price": 80.0,
+        "originalPrice": 160.0,
         "discount": "50% off",
         "rating": 4.9,
         "image": "images/chair2.png",
@@ -171,33 +178,124 @@
       },
       {
         "id": 2,
+        "name": "Bookshelf",
+        "type": "latest products",
+        "category": "Shelf",
+        "price": 110.0,
+        "originalPrice": 140.0,
+        "discount": "21% off",
+        "rating": 4.8,
+        "image": "images/Rocking Chair3.png"
+      },
+      {
+        "id": 3,
+        "name": "Bedside Table",
+        "type": "latest products",
+        "category": "Nightstand",
+        "price": 60.0,
+        "originalPrice": 80.0,
+        "discount": "25% off",
+        "rating": 4.7,
+        "image": "images/Tble.png"
+      },
+      {
+        "id": 4,
+        "name": "Reception Sofa",
+        "type": "featured products",
+        "category": "Sofa",
+        "price": 120.0,
+        "originalPrice": 150.0,
+        "discount": "20% off",
+        "rating": 4.6,
+        "image": "images/bean bag.png"
+      },
+      {
+        "id": 5,
         "name": "Living Room Chair",
+        "type": "best sellers",
         "category": "Chair",
-        "price": 90.00,
-        "originalPrice": 130.00,
+        "price": 90.0,
+        "originalPrice": 130.0,
         "discount": "30% off",
         "rating": 4.7,
         "image": "images/sofaa2.png"
       },
       {
-        "id": 3,
-        "name": "Elegant Armchair",
+        "id": 6,
+        "name": "Office Chair",
+        "type": "latest products",
         "category": "Chair",
-        "price": 110.00,
-        "originalPrice": 180.00,
+        "price": 90.0,
+        "originalPrice": 120.0,
+        "discount": "15% off",
+        "rating": 4.5,
+        "image": "images/roking chair.png"
+      },
+      {
+        "id": 7,
+        "name": "Dining Table",
+        "type": "featured products",
+        "category": "Table",
+        "price":200.0,
+        "originalPrice": 250.0,
+        "discount": "20% off",
+        "rating": 5.0,
+        "image": "images/lamp3.png"
+      },
+      {
+        "id": 8,
+        "name": "Glass Coffee Table",
+        "type": "best sellers",
+        "category": "Table",
+        "price": 130.0,
+        "originalPrice": 170.0,
+        "discount": "23% off",
+        "rating": 4.6,
+        "image": "images/chair9.png"
+      },
+      {
+        "id": 9,
+        "name": "Plastic Stool",
+        "type": "best sellers",
+        "category": "Stool",
+        "price": 30.0,
+        "originalPrice": 45.0,
+        "discount": "33% off",
+        "rating": 4.2,
+        "image": "images/bean.png"
+      },
+      {
+        "id": 10,
+        "name": "Classic Rocking Chair",
+        "type": "featured products",
+        "category": "Chair",
+        "price": 95.0,
+        "originalPrice": 130.0,
+        "discount": "25% off",
+        "rating": 4.6,
+        "image": "images/Rocking Chair.png"
+      },
+      {
+        "id": 11,
+        "name": "Elegant Armchair",
+        "type": "best sellers",
+        "category": "Chair",
+        "price": 110.0,
+        "originalPrice": 180.0,
         "discount": "40% off",
         "rating": 4.8,
         "image": "images/door2.png"
       },
       {
-        "id": 4,
-        "name": "Reception Sofa",
-        "category": "Sofa",
-        "price": 120.00,
-        "originalPrice": 150.00,
-        "discount": "20% off",
-        "rating": 4.6,
-        "image": "images/bean bag.png"
+        "id": 12,
+        "name": "Minimalist Desk",
+        "type": "featured products",
+        "category": "Desk",
+        "price": 140.0,
+        "originalPrice": 180.0,
+        "discount": "22% off",
+        "rating": 4.9,
+        "image": "images/Rocking Chair2.png"
       }
     ]
   },
@@ -214,7 +312,7 @@
     "images": [
       "images/livingroom.jpg",
       "images/livingroom.jpg",
-       "images/livingroom.jpg"
+      "images/livingroom.jpg"
     ]
   },
   "deals": {
@@ -223,73 +321,105 @@
     "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
     "items": [
       {
+        "type" : "chair",
         "id": 1,
         "name": "Recliner Chair Wood",
         "category": "Chair",
-        "price": 105.00,
-        "originalPrice": 150.00,
+        "price": 105.0,
+        "originalPrice": 150.0,
         "discount": "30% off",
         "rating": 5.0,
         "image": "images/chair3.png",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"
+        "description": "The Recliner Chair Wood combines timeless elegance with exceptional comfort, featuring sturdy craftsmanship and a cozy design ideal for relaxation."
       },
       {
+        "type":"desk",
         "id": 2,
-        "name": "Recliner Chair Steel",
-        "category": "Chair",
-        "price": 80.00,
-        "originalPrice": 100.00,
-        "discount": "20% off",
+        "name": "Minimalist Desk",
+        "category": "Desk",
+        "price": 140.0,
+        "originalPrice": 180.0,
+        "discount": "22% off",
         "rating": 4.9,
-        "image": "images/chair3.png",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"
+        "image": "images/Rocking Chair2.png",
+        "description": "The Minimalist Desk offers sleek, modern design with clean lines, perfect for small spaces and boosting productivity in style."
       },
       {
+        "type":"chair",
         "id": 3,
-        "name": "Recliner Chair Wood",
+        "name": "Classic Rocking Chair",
         "category": "Chair",
-        "price": 105.00,
-        "originalPrice": 150.00,
-        "discount": "30% off",
-        "rating": 5.0,
-        "image": "images/chair3.png",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"
+        "price": 95.0,
+        "originalPrice": 130.0,
+        "discount": "25% off",
+        "rating": 4.6,
+        "image": "images/Rocking Chair.png",
+        "description": "The Classic Rocking Chair blends vintage charm with ergonomic comfort, offering a soothing motion perfect for relaxation or cozy reading corners."
       }
     ]
   },
   "promotions": [
     {
+      "type":"latest-gaming-chairs",
       "title": "Latest Gaming Chairs",
       "subtitle": "Flat 20% Discount",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
+      "description": "The gaming chair offers ergonomic comfort, sleek design, and strong support, making it ideal for long gaming or work sessions",
       "image": "images/chair5.png",
       "color": "gray"
     },
     {
+      "type":"wood-chair-collection",
       "title": "Wood Chair Collection",
       "subtitle": "Flat 15% Discount",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
+      "description": "The Wood Chair Collection blends timeless craftsmanship with natural elegance, offering durable, stylish seating perfect for both modern and classic interiors",
       "image": "images/chair6.png",
       "color": "yellow"
     }
   ],
   "testimonials": {
-    "title": "What Our Clients Say",
     "subtitle": "Testimonial",
     "items": [
       {
         "name": "Leslie Alexander",
         "role": "Architecture",
-      
+        "rating": 4.4,
         "image": "images/Leslie .jpg",
         "text": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa"
       },
       {
         "name": "Jenny Wilson",
         "role": "Interior Designer",
-       
-        "image": "images/Leslie .jpg",
-        "text": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa"
+        "rating": 4.5,
+        "image": "images/user-5.jpeg",
+        "text": "An interior designer creates functional, beautiful spaces that reflect personality, comfort, and modern elegance."
+      },
+      {
+        "name": "John Doe",
+        "role": "Product Designer",
+        "image": "/images/user-1.webp",
+        "text": "A product designer crafts innovative, user-friendly solutions that seamlessly blend function with aesthetic appeal.",
+        "rating": 5.0
+      },
+      {
+        "name": "Jane Smith",
+        "role": "Homeowner",
+        "image": "/images/user-2.jpeg",
+        "text": "A homeowner takes pride in creating a cozy, welcoming, and personalized living space.",
+        "rating": 4.8
+      },
+      {
+        "name": "Michael Brown",
+        "role": "Architect",
+        "image": "/images/user-3.jpeg",
+        "text": "An architect blends creativity and precision to design inspiring, functional, and timeless living spaces.",
+        "rating": 4.9
+      },
+      {
+        "name": "Emily White",
+        "role": "Interior Decorator",
+        "image": "/images/user-4.jpeg",
+        "text": "An interior decorator transforms spaces with style, harmony, and personal touches that inspire comfort.",
+        "rating": 5.0
       }
     ]
   },
@@ -299,22 +429,25 @@
     "button": "View All Blogs",
     "items": [
       {
+        "slug": "furniture-trends-2024",
         "title": "Furniture Trends 2024: What's Hot and What's Not",
         "date": "15 April 2024",
         "image": "images/ChatGPT Image Jul 7, 2025, 01_45_10 PM.png",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+        "description": "A concise look at 2024 furniture trends: fresh styles, bold colors, essential insights."
       },
       {
+        "slug": "ultimate-guide-choosing-perfect-sofa",
         "title": "The Ultimate Guide to Choosing the Perfect Sofa",
         "date": "14 April 2024",
         "image": "images/ChatGPT Image Jul 7, 2025, 01_35_08 PM.png",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+        "description": "A helpful guide for selecting a stylish, comfortable, and lasting perfect sofa."
       },
       {
+        "slug": "choosing-right-dining-table",
         "title": "Choosing the Right Dining Table for Your Lifestyle",
         "date": "12 April 2024",
         "image": "images/ChatGPT Image Jul 7, 2025, 01_40_26 PM.png",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+        "description": "Choose a dining table that fits your space, style, and daily lifestyle needs."
       }
     ]
   },
@@ -404,4 +537,4 @@
     },
     "copyright": "© 2024 Furniture. All Rights Reserved."
   }
-} 
+}

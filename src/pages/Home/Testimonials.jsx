@@ -17,36 +17,36 @@ const Testimonials = ({ data }) => {
 
   // Add more dummy testimonials for better carousel effect
   const dummyTestimonials = [
-    ...data.items,
+    // ...data.items,
     ...data.items, // duplicate for infinite scroll
-    {
-      name: "John Doe",
-      role: "Product Designer",
-      image: "/images/Leslie .jpg",
-      text: "Amazing quality and fast delivery. Will definitely shop again!",
-      rating: 5.0,
-    },
-    {
-      name: "Jane Smith",
-      role: "Homeowner",
-      image: "/images/Leslie .jpg",
-      text: "The furniture fits perfectly in my living room. Highly recommended.",
-      rating: 4.8,
-    },
-    {
-      name: "Michael Brown",
-      role: "Architect",
-      image: "/images/Leslie .jpg",
-      text: "Great customer service and beautiful designs.",
-      rating: 4.9,
-    },
-    {
-      name: "Emily White",
-      role: "Interior Decorator",
-      image: "/images/Leslie .jpg",
-      text: "Stylish and comfortable. My clients love it!",
-      rating: 5.0,
-    },
+    // {
+    //   name: "John Doe",
+    //   role: "Product Designer",
+    //   image: "/images/user-1.webp",
+    //   text: "Amazing quality and fast delivery. Will definitely shop again!",
+    //   rating: 5.0,
+    // },
+    // {
+    //   name: "Jane Smith",
+    //   role: "Homeowner",
+    //   image: "/images/user-2.jpeg",
+    //   text: "The furniture fits perfectly in my living room. Highly recommended.",
+    //   rating: 4.8,
+    // },
+    // {
+    //   name: "Michael Brown",
+    //   role: "Architect",
+    //   image: "/images/user-3.jpeg",
+    //   text: "Great customer service and beautiful designs.",
+    //   rating: 4.9,
+    // },
+    // {
+    //   name: "Emily White",
+    //   role: "Interior Decorator",
+    //   image: "/images/user-4.jpeg",
+    //   text: "Stylish and comfortable. My clients love it!",
+    //   rating: 5.0,
+    // },
   ];
 
   const testimonials = dummyTestimonials;

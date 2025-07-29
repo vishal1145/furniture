@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 const Dots = ({ className, style }) => (
   <svg
     width="120"
@@ -35,12 +36,16 @@ const Dots = ({ className, style }) => (
 );
 const FlashSale = ({ data }) => {
   const [countdown, setCountdown] = useState(data.countdown);
+  const navigate = useNavigate();
 
+  const openShopPage = () => {
+    navigate("/shop");
+  };
   useEffect(() => {
     const interval = setInterval(() => {
-      setCountdown(prevCountdown => {
+      setCountdown((prevCountdown) => {
         let { days, hours, minutes, seconds } = prevCountdown;
-        
+
         if (seconds > 0) {
           seconds--;
         } else {
@@ -59,7 +64,7 @@ const FlashSale = ({ data }) => {
             }
           }
         }
-        
+
         return { days, hours, minutes, seconds };
       });
     }, 1000);
@@ -70,71 +75,91 @@ const FlashSale = ({ data }) => {
   return (
     <section className="px-6 sm:px-12 lg:px-32  bg-white">
       <div className="max-w-7xl  mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-      
         {/* LEFT: Countdown Card */}
         <div className="bg-gray-50 relative rounded-2xl p-6 w-full h-auto md:h-[460px] shadow flex flex-col justify-center items-center text-center ">
-              <div className="absolute left-20 bottom-0  ">
-        <Dots />
-      </div>
-      {/* Dots - top right */}
-  <div className="absolute right-20 top-0 ">
-  <Dots />
-</div>
+          <div className="absolute left-20 bottom-0  ">
+            <Dots />
+          </div>
+          {/* Dots - top right */}
+          <div className="absolute right-20 top-0 ">
+            <Dots />
+          </div>
           <h3 className="text-5xl font-medium text-gray-900">
-            {data.title.split(' ')[0]} <span className="text-green-900">{data.title.split(' ')[1]}</span>
+            {data.title.split(" ")[0]}{" "}
+            <span className="text-green-900">{data.title.split(" ")[1]}</span>
           </h3>
           <p className="text-gray-600 text-xl mt-2 mb-4">{data.subtitle}</p>
 
           {/* Countdown */}
           <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 text-sm text-gray-700 font-semibold mb-6">
             <div className="text-center w-20 sm:w-auto">
-              <div className="text-5xl sm:text-6xl font-medium text-gray-900">{String(countdown.days).padStart(2, '0')}</div>
-              <div className='font-medium'>Days</div>
-            </div>
-            
-            <div className="text-4xl sm:text-5xl font-medium text-gray-900">:</div>
-
-            <div className="text-center w-20 sm:w-auto">
-              <div className="text-5xl sm:text-6xl ffont-medium text-gray-900">{String(countdown.hours).padStart(2, '0')}</div>
-              <div className='font-medium'>Hours</div>
+              <div className="text-5xl sm:text-6xl font-medium text-gray-900">
+                {String(countdown.days).padStart(2, "0")}
+              </div>
+              <div className="font-medium">Days</div>
             </div>
 
-            <div className="text-4xl sm:text-5xl font-medium text-gray-900">:</div>
-
-            <div className="text-center w-20 sm:w-auto">
-              <div className="text-5xl sm:text-6xl font-medium text-gray-900">{String(countdown.minutes).padStart(2, '0')}</div>
-              <div className='font-medium'>Minutes</div>
+            <div className="text-4xl sm:text-5xl font-medium text-gray-900">
+              :
             </div>
 
-            <div className="text-4xl sm:text-5xl font-medium text-gray-900">:</div>
+            <div className="text-center w-20 sm:w-auto">
+              <div className="text-5xl sm:text-6xl ffont-medium text-gray-900">
+                {String(countdown.hours).padStart(2, "0")}
+              </div>
+              <div className="font-medium">Hours</div>
+            </div>
+
+            <div className="text-4xl sm:text-5xl font-medium text-gray-900">
+              :
+            </div>
 
             <div className="text-center w-20 sm:w-auto">
-              <div className="text-5xl sm:text-6xl font-medium text-gray-900">{String(countdown.seconds).padStart(2, '0')}</div>
-              <div className='font-medium'>Seconds</div>
+              <div className="text-5xl sm:text-6xl font-medium text-gray-900">
+                {String(countdown.minutes).padStart(2, "0")}
+              </div>
+              <div className="font-medium">Minutes</div>
+            </div>
+
+            <div className="text-4xl sm:text-5xl font-medium text-gray-900">
+              :
+            </div>
+
+            <div className="text-center w-20 sm:w-auto">
+              <div className="text-5xl sm:text-6xl font-medium text-gray-900">
+                {String(countdown.seconds).padStart(2, "0")}
+              </div>
+              <div className="font-medium">Seconds</div>
             </div>
           </div>
 
           {/* Button */}
-          <button className="bg-green-900 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-green-800">
-            {data.button}
+          <button
+            onClick={openShopPage}
+            className="bg-green-900 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-green-800"
+          >
+            {/* {data.button} */}
+            Shop now
           </button>
         </div>
 
         {/* RIGHT: Three Side-by-Side Rounded Images */}
         <div className="grid grid-cols-3 gap-4">
           {data.images.map((image, index) => (
-         <div key={index} className="relative h-[460px] w-full rounded-2xl overflow-hidden shadow">
-  {/* Image */}
-  <img 
-    src={image} 
-    alt={`Flash Sale ${index + 1}`} 
-    className="h-full w-full object-cover rounded-2xl"
-  />
-  
-  {/* White Rounded Inner Border */}
-  <div className="absolute inset-0 m-2 border border-white rounded-[22px] pointer-events-none"></div>
-</div>
+            <div
+              key={index}
+              className="relative h-[460px] w-full rounded-2xl overflow-hidden shadow"
+            >
+              {/* Image */}
+              <img
+                src={image}
+                alt={`Flash Sale ${index + 1}`}
+                className="h-full w-full object-cover rounded-2xl"
+              />
 
+              {/* White Rounded Inner Border */}
+              <div className="absolute inset-0 m-2 border border-white rounded-[22px] pointer-events-none"></div>
+            </div>
           ))}
         </div>
       </div>
@@ -142,4 +167,4 @@ const FlashSale = ({ data }) => {
   );
 };
 
-export default FlashSale; 
+export default FlashSale;
