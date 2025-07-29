@@ -468,32 +468,32 @@
     "items": [
       {
         "question": "What types of furniture do you offer?",
-        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua eiusmod tempor incididunt ut labore et dolore magna aliqua",
+   "answer": "We offer a wide range of furniture including sofas, beds, dining tables, chairs, wardrobes, coffee tables, TV units, study desks, and home decor accessories designed to suit modern and classic interiors.",
         "open": true
       },
       {
         "question": "What payment methods do you accept?",
-        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua eiusmod tempor incididunt ut labore et dolore magna aliqua",
+           "answer": "We accept all major credit and debit cards, UPI, Net Banking, and digital wallets. You can also choose from EMI options during checkout if available.",
         "open": true
       },
       {
         "question": "Can I track my furniture delivery?",
-        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua eiusmod tempor incididunt ut labore et dolore magna aliqua",
+           "answer": "Yes, once your order is shipped, you will receive a tracking ID via email or SMS. You can use this ID to track the delivery status directly on our website or through the delivery partner’s portal.",
         "open": true
       },
       {
         "question": "What is your return policy?",
-        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua eiusmod tempor incididunt ut labore et dolore magna aliqua",
+ "answer": "We offer a 7-day return policy for eligible products. The item must be unused, in its original packaging, and with all tags attached. Custom or made-to-order furniture is not returnable unless defective.",
         "open": false
       },
       {
         "question": "What materials are used in your furniture?",
-        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua eiusmod tempor incididunt ut labore et dolore magna aliqua",
+"answer": "Our furniture is made using high-quality materials like solid wood, engineered wood, premium fabric, genuine and faux leather, stainless steel, and durable foams, depending on the product category.",
         "open": true
       },
       {
         "question": "Are there any discounts or promotions available?",
-        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua eiusmod tempor incididunt ut labore et dolore magna aliqua",
+"answer": "Yes, we run regular seasonal sales, clearance offers, and exclusive discounts. Subscribe to our newsletter or follow us on social media to stay updated on ongoing promotions.",
         "open": true
       }
     ]
@@ -510,7 +510,7 @@
       "accent": ".",
       "icon": "F"
     },
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+     "description": "Furniture. brings comfort and style to every corner of your home. From timeless designs to modern essentials, we offer high-quality furniture pieces built to last — crafted with care and delivered with trust.",
     "links": {
       "Company": [
         { "name": "About Us", "href": "/aboutus" },
