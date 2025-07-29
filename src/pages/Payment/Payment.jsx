@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import checkoutData from "../../data/checkout.json";
+import paymentData from "../../data/payment.json";
 import furnitureData from "../../data/furnitureData.json";
+import HeaderFile from "../../components/Header";
 import Navbar from "../../components/Navbar";
-import Header from "../../components/Header";
 import Features from "../../components/Features";
 import Footer from "../../components/Footer";
 const Payment = () => {
@@ -28,7 +28,7 @@ const Payment = () => {
 
   const {
     summary: { items, subtotal, shipping, tax, coupon, total },
-  } = checkoutData;
+  } = paymentData;
 
   // const handleConfirm = () => {
   //   navigate("/ordercompleted");
@@ -37,7 +37,7 @@ const Payment = () => {
   return (
     <>
      <Navbar data={furnitureData.navigation} />
-      <Header data={checkoutData}/>
+      <HeaderFile data={paymentData}/>
 
       <div className="max-w-7xl mx-auto px-4 py-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">

@@ -1,8 +1,8 @@
 import React from 'react';
-import orderData from '../../data/ordercompleted.json';
+import orderCompletedData from "../../data/ordercompleted.json";
 import furnitureData from "../../data/furnitureData.json";
 import Navbar from "../../components/Navbar";
-import Header from '../../components/Header';
+import HeaderFile from '../../components/Header';
 import Footer from "../../components/Footer";
 import Features from "../../components/Features";
 
@@ -16,7 +16,7 @@ const OrderCompleted = () => {
     shipping,
     taxes,
     discount
-  } = orderData;
+  } = orderCompletedData;
 
   const subtotal = products.reduce((sum, item) => sum + item.price, 0);
   const total = subtotal + taxes + shipping - discount;
@@ -24,7 +24,7 @@ const OrderCompleted = () => {
   return (
     <>
       <Navbar data={furnitureData.navigation} />
-       <Header data={orderData} />
+       <HeaderFile data={orderCompletedData} />
       <div className="py-16 px-4 sm:px-12 lg:px-32 bg-white">
         <div className="max-w-7xl mx-auto">
           {/* Checkmark Icon */}

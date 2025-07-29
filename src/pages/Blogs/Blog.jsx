@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import blogData from "../../data/blog.json";
 import furnitureData from "../../data/furnitureData.json";
 import Navbar from "../../components/Navbar";
-import Header from "../../components/Header";
+import HeaderFile from "../../components/Header";
 import Footer from "../../components/Footer";
 import Features from "../../components/Features";
 import { Pagination, Stack } from "@mui/material";
@@ -69,7 +69,7 @@ const Blog = () => {
   return (
     <>
       <Navbar data={furnitureData.navigation} />
-      <Header data={blogData} />
+      <HeaderFile data={blogData} />
 
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">

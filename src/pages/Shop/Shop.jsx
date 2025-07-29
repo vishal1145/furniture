@@ -4,7 +4,7 @@ import shopData from '../../data/shop.json';
 import Footer from '../../components/Footer';
 import Navbar from '../../components/Navbar';
 import furnitureData from '../../data/furnitureData.json';
-import Header from '../../components/Header';
+import HeaderFile from '../../components/Header';
 import Features from '../../components/Features';
 // import ProductDetails from '../Products/ProductDetails';
 
@@ -13,7 +13,7 @@ import Features from '../../components/Features';
 const Shop = () => (
   <div>
     <Navbar data={furnitureData.navigation} />
-    <Header data={shopData} />
+    <HeaderFile data={shopData} />
     <ShopHero data={shopData} />
     <Features data={furnitureData.features} />
     <Footer data={furnitureData.footer} />

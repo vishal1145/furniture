@@ -6,7 +6,7 @@ import RelatedProducts from '../../components/RelatedProducts';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import furnitureData from '../../data/furnitureData.json'; 
-import Header from '../../components/Header';
+import HeaderFile from '../../components/Header';
 import shopData from '../../data/shop.json';
 import { FaStar, FaFacebookF, FaTwitter, FaPinterestP, FaInstagram, FaCheckCircle } from "react-icons/fa"; // For check icon, or use your own SVG
 import Features from '../../components/Features';
@@ -72,7 +72,7 @@ const ProductDetails = () => {
     <>
       {/* ✅ Navbar */}
       <Navbar data={furnitureData.navigation} />
-      <Header data={productData} />
+      <HeaderFile data={productData} />
       {/* ✅ Main Product Content */}
       <div className="bg-white  flex items-center justify-center py-8 px-2">
         <div className="max-w-7xl w-full bg-white rounded-2xl  p-6 flex flex-col md:flex-row gap-10">

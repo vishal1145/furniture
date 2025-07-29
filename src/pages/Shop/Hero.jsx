@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Pagination, Stack } from "@mui/material";
 
@@ -18,26 +18,61 @@ const ShopHero = ({ data }) => {
     setCurrentPage(value);
   };
 
-  const [wishlist, setWishlist] = useState([]);
-  console.log(wishlist);
+  // Initialize wishlist from localStorage
+  const [wishlist, setWishlist] = useState(() => {
+    const savedWishlist = localStorage.getItem('wishlist');
+    return savedWishlist ? JSON.parse(savedWishlist) : [];
+  });
+
+  // Save wishlist to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem('wishlist', JSON.stringify(wishlist));
+    console.log('Wishlist saved to localStorage:', wishlist);
+    
+    // Dispatch custom event to notify navbar about wishlist update
+    window.dispatchEvent(new Event('wishlistUpdated'));
+  }, [wishlist]);
 
   const toggleHeart = (product) => {
-    setWishlist((prevWishlist) =>
-      prevWishlist.includes(product)
-        ? prevWishlist.filter((itemId) => itemId !== product.id)
-        : [...prevWishlist, product]
-    );
+    setWishlist((prevWishlist) => {
+      const isInWishlist = prevWishlist.some(item => item.id === product.id);
+      if (isInWishlist) {
+        return prevWishlist.filter(item => item.id !== product.id);
+      } else {
+        return [...prevWishlist, product];
+      }
+    });
   };
 
-  const [addCart, setAddCart] = useState([]);
-  console.log(addCart);
+  const [addCart, setAddCart] = useState(() => {
+    const savedCart = localStorage.getItem('cart');
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
+
+  // Save cart to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(addCart));
+    console.log('Cart saved to localStorage:', addCart);
+    
+    // Dispatch custom event to notify navbar about cart update
+    window.dispatchEvent(new Event('cartUpdated'));
+  }, [addCart]);
 
   const handleAddCart = (product) => {
-    setAddCart((prevAddCart) =>
-      prevAddCart.includes(product)
-        ? prevAddCart.filter((itemId) => itemId !== product.id)
-        : [...prevAddCart, product]
-    );
+    setAddCart((prevCart) => {
+      const existingItem = prevCart.find(item => item.id === product.id);
+      if (existingItem) {
+        // If item exists, increase quantity
+        return prevCart.map(item => 
+          item.id === product.id 
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      } else {
+        // If item doesn't exist, add it with quantity 1
+        return [...prevCart, { ...product, quantity: 1 }];
+      }
+    });
   };
 
   // console.log(paginatedProducts);
@@ -199,7 +234,7 @@ const ShopHero = ({ data }) => {
           {/* Product Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 ">
             {paginatedProducts.map((product, idx) => {
-              const isFilled = wishlist.includes(product);
+              const isFilled = wishlist.some(item => item.id === product.id);
               return (
                 <Link
                   key={product.id}

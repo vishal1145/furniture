@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import contactData from "../../data/contact.json";
 import furnitureData from "../../data/furnitureData.json";
 import Navbar from "../../components/Navbar";
-import Header from '../../components/Header';
+import HeaderFile from '../../components/Header';
 import Footer from "../../components/Footer";
 import Features from "../../components/Features";
 
@@ -27,7 +27,7 @@ const ContactUs = () => {
   return (
     <>
       <Navbar data={furnitureData.navigation} />
-      <Header data={contactData} />
+      <HeaderFile data={contactData} />
 
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

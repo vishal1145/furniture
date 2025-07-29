@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import faqData from "../../data/faq.json";
 import furnitureData from "../../data/furnitureData.json";
 import Navbar from "../../components/Navbar";
-import Header from '../../components/Header';
+import HeaderFile from '../../components/Header';
 import Footer from "../../components/Footer";
 import Features from "../../components/Features";
 
@@ -25,7 +25,7 @@ const Faq = () => {
   return (
     <>
       <Navbar data={furnitureData.navigation} />
-      <Header data={faqData} />
+      <HeaderFile data={faqData} />
       <div className=" p-12   px-6 sm:px-12 lg:px-32 py-4 ">
         <div className='max-w-7xl mx-auto'>
         {/* Breadcrumb Section */}

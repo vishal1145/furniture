@@ -1,8 +1,8 @@
 import React from 'react';
-import aboutData from '../../data/aboutus.json';
+import aboutData from "../../data/aboutus.json";
 import furnitureData from "../../data/furnitureData.json";
 import Navbar from "../../components/Navbar";
-import Header from '../../components/Header';
+import HeaderFile from '../../components/Header';
 import Footer from "../../components/Footer";
 import Features from "../../components/Features";
 import Team from '../../components/Team';
@@ -13,7 +13,7 @@ const AboutUs = () => {
   return (
     <>
       <Navbar data={furnitureData.navigation} />
-      <Header data={aboutData} />
+      <HeaderFile data={aboutData} />
       <section className="py-16 px-4 bg-white">
         <div className="max-w-7xl mx-auto text-center">
           {/* Main Heading */}

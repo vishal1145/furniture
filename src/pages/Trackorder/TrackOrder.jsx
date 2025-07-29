@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import furnitureData from '../../data/furnitureData.json';
 import trackData from '../../data/trackorder.json';
-import furnitureData from "../../data/furnitureData.json";
 import Navbar from "../../components/Navbar";
-import Header from '../../components/Header';
+import HeaderFile from '../../components/Header';
 import Footer from "../../components/Footer";
 import Features from "../../components/Features";
 
@@ -28,7 +28,7 @@ const TrackOrder = () => {
   return (
     <>
       <Navbar data={furnitureData.navigation} />
-      <Header data={trackData.header} /> {/* ✅ FIXED - Pass header object specifically */}
+      <HeaderFile data={trackData.header} /> {/* ✅ FIXED - Pass header object specifically */}
 
       <section className="py-16 px-6 sm:px-12 lg:px-32">
         <div className="max-w-7xl mx-auto">

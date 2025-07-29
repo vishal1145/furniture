@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import data from "../../data/myaccount.json";
 import furnitureData from "../../data/furnitureData.json";
 import Navbar from "../../components/Navbar";
-import Header from '../../components/Header';
+import HeaderFile from '../../components/Header';
 import Footer from "../../components/Footer";
 import Features from "../../components/Features";
 
@@ -424,7 +424,7 @@ const MyAccount = () => {
   return (
     <>
     <Navbar data={furnitureData.navigation} />
-      <Header data={data} />
+      <HeaderFile data={data} />
     <section className="max-w-7xl mx-auto px-4 py-12">
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Sidebar */}

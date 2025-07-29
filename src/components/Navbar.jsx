@@ -1,12 +1,60 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
 const Navbar = ({ data }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [wishlistCount, setWishlistCount] = useState(0);
+  const [cartCount, setCartCount] = useState(0);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
+
+  // Get wishlist and cart count from localStorage
+  useEffect(() => {
+    const updateCounts = () => {
+      // Update wishlist count
+      const savedWishlist = localStorage.getItem('wishlist');
+      const wishlistItems = savedWishlist ? JSON.parse(savedWishlist) : [];
+      setWishlistCount(wishlistItems.length);
+
+      // Update cart count
+      const savedCart = localStorage.getItem('cart');
+      const cartItems = savedCart ? JSON.parse(savedCart) : [];
+      const totalCartItems = cartItems.reduce((total, item) => total + (item.quantity || 1), 0);
+      setCartCount(totalCartItems);
+    };
+
+    // Initial counts
+    updateCounts();
+
+    // Listen for storage changes (when wishlist/cart is updated from other components)
+    const handleStorageChange = (e) => {
+      if (e.key === 'wishlist' || e.key === 'cart') {
+        updateCounts();
+      }
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+    
+    // Also listen for custom events (for same-tab updates)
+    const handleWishlistUpdate = () => {
+      updateCounts();
+    };
+    
+    const handleCartUpdate = () => {
+      updateCounts();
+    };
+    
+    window.addEventListener('wishlistUpdated', handleWishlistUpdate);
+    window.addEventListener('cartUpdated', handleCartUpdate);
+
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+      window.removeEventListener('wishlistUpdated', handleWishlistUpdate);
+      window.removeEventListener('cartUpdated', handleCartUpdate);
+    };
+  }, []);
 
   return (
     <nav className="bg-white shadow-sm   px-6 sm:px-12 lg:px-32 py-4">
@@ -43,11 +91,15 @@ const Navbar = ({ data }) => {
             </button>
              <Link to="/wishlist">
             {/* Wishlist */}
-            <button className="hover:text-green-600 mt-2">
+            <button className="hover:text-green-600 mt-2 relative">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <path d="M20.8 4.6c-1.6-1.5-4.2-1.5-5.8 0l-.9.9-.9-.9c-1.6-1.5-4.2-1.5-5.8 0s-1.6 4 0 5.6l6.7 6.7 6.7-6.7c1.6-1.5 1.6-4.1 0-5.6z"/>
 </svg>
-
+                  {wishlistCount > 0 && (
+                    <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">
+                      {wishlistCount}
+                    </span>
+                  )}
             </button>
             </Link>
             {/* Cart */}
@@ -58,7 +110,11 @@ const Navbar = ({ data }) => {
   <circle cx="20" cy="21" r="1"></circle>
   <path d="M1 1h4l2.6 13.3a1 1 0 001 .7h11.4a1 1 0 001-.8l1.4-7H6"/>
 </svg>
-
+ {cartCount > 0 && (
+   <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">
+     {cartCount}
+   </span>
+ )}
   </button>
 </Link>
             

@@ -47,14 +47,16 @@ const HeaderFile = ({ data }) => (
         <Dots />
       </div>
       <h1 className="text-3xl font-medium text-gray-900 mb-2">{data.title}</h1>
-      <div className="flex justify-center items-center gap-2 text-gray-500 text-base">
-        {data.breadcrumb.map((item, idx) => (
-          <React.Fragment key={item.label}>
-            <a href={item.href} className="hover:underline">{item.label}</a>
-            {idx < data.breadcrumb.length - 1 && <span className="mx-1">/</span>}
-          </React.Fragment>
-        ))}
-      </div>
+      {data.breadcrumb && data.breadcrumb.length > 0 && (
+        <div className="flex justify-center items-center gap-2 text-gray-500 text-base">
+          {data.breadcrumb.map((item, idx) => (
+            <React.Fragment key={item.label}>
+              <a href={item.href} className="hover:underline">{item.label}</a>
+              {idx < data.breadcrumb.length - 1 && <span className="mx-1">/</span>}
+            </React.Fragment>
+          ))}
+        </div>
+      )}
     </div>
   </div>
 );
