@@ -28,8 +28,8 @@ const ContactUs = () => {
     <>
       <Navbar data={furnitureData.navigation} />
       <HeaderFile data={contactData} />
-
-      <div className="max-w-7xl mx-auto px-4 py-12">
+<div className="px-6 sm:px-12 lg:px-32 py-12">
+      <div className="max-w-7xl mx-auto ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Left Form */}
           <div>
@@ -144,10 +144,10 @@ const ContactUs = () => {
             </div>
           </div>
         </div>
-      </div>
+     
       {/* Map Section */}
-      <div className="max-w-7xl mx-auto px-4 pb-12">
-        <div className="w-full rounded-2xl overflow-hidden" style={{ minHeight: 250, maxHeight: 350 }}>
+      {/* <div className="max-w-7xl mx-auto px-4 pb-12"> */}
+        <div className="w-full rounded-2xl overflow-hidden mt-16" style={{ minHeight: 250, maxHeight: 350 }}>
           <iframe
             title="Google Map"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.858234857964!2d-74.0086806845932!3d40.7130549793316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a19f8b1e7b1%3A0x8d8e8e8e8e8e8e8e!2sPark%20Row%2C%20New%20York%2C%20NY%2010007%2C%20USA!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
@@ -159,6 +159,7 @@ const ContactUs = () => {
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
+      </div>
       </div>
       <Features data={furnitureData.features}/>
       {/* ✅ Footer */}

@@ -2,7 +2,8 @@ import React from 'react';
 
 const Footer = ({ data }) => {
   return (
-    <footer className="bg-green-900 text-white pt-16">
+    <footer className="bg-green-900 text-white pt-16 ">
+      <div className=" px-6 sm:px-12 lg:px-32">
       <div className="max-w-7xl mx-auto px-3 grid grid-cols-1 md:grid-cols-5 gap-10 text-left">
         {/* Logo and Description */}
         <div className="text-center md:text-left">
@@ -89,7 +90,7 @@ const Footer = ({ data }) => {
           </ul>
         </div>
       </div>
-
+</div>
       {/* Bottom Bar */}
       <div className="bg-yellow-400 text-sm text-gray-900 mt-12 py-4  px-6 sm:px-12 lg:px-32">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center">

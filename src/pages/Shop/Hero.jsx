@@ -436,7 +436,7 @@ const ShopHero = ({ data }) => {
   };
 
   return (
-    <div className=" px-2 sm:px-4 md:px-8 bg-white py-8 ">
+    <div className="px-6 sm:px-12 lg:px-32 bg-white py-8 ">
       <div className="max-w-7xl mx-auto ">
         <div className="flex flex-col lg:flex-row gap-8">
         {/* Filter Sidebar */}

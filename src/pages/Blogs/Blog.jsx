@@ -71,8 +71,8 @@ const Blog = () => {
       <Navbar data={furnitureData.navigation} />
       <HeaderFile data={blogData} />
 
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="py-16 px-6 sm:px-12 lg:px-32 bg-white">
+        <div className="max-w-7xl mx-auto ">
           {/* Blog Cards */}
           <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-10">
             {selectedBlogs.map((blog, index) => (

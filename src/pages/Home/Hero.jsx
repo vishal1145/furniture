@@ -62,7 +62,28 @@ const Hero = ({ data }) => {
   };
   
   const openProductDetails = (card) => {
-    navigate(`/shop/${card.type}/product-details`);
+    // Create a product object with all necessary fields for product details page
+    const productData = {
+      id: Math.floor(Math.random() * 1000) + 1, // Generate a random ID
+      name: card.title,
+      title: card.title,
+      type: card.type,
+      image: card.image,
+      price: parseFloat(card.price.replace('$', '')) || 199,
+      oldPrice: parseFloat(card.price.replace('$', '')) * 1.5 || 299,
+      category: card.type,
+      description: `Explore our amazing ${card.title} collection with ${card.items} items available.`,
+      rating: 4.8,
+      reviewCount: 156,
+      inStock: true,
+      colors: ['#8B4513', '#A0522D', '#FFFFFF', '#008080', '#0000FF'],
+      sku: `FRNC${Math.floor(Math.random() * 10000)}`,
+      tags: ["Furniture", card.type, "Home"]
+    };
+
+    navigate(`/shop/${card.type}/product-details/${productData.id}`, {
+      state: { productData: productData }
+    });
   };
 
   return (

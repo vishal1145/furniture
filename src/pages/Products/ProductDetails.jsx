@@ -188,20 +188,20 @@ const ProductDetails = () => {
           <div className="flex flex-col items-center justify-center w-full md:w-1/2">
             <div className="flex items-center gap-4">
             
-              <div className="bg-gray-50 rounded-2xl p-4 flex items-center justify-center relative">
-                  <button className="bg-green-900 text-white w-10 h-10 rounded-md flex items-center justify-center text-xl hover:bg-green-800 transition-colors absolute left-2 z-10">
+              <div className="bg-gray-50 rounded-2xl p-6 flex items-center justify-center relative">
+                  <button className="bg-green-900 text-white w-8 h-8 rounded-md flex items-center justify-center text-sm hover:bg-green-800 transition-colors absolute left-2 z-10">
                 &#60;
               </button>
                 <img
                   src={selectedImage || displayProduct.image || '/images/chair2.png'}
                   alt={displayProduct.title || 'Product Image'}
-                  className="w-[400px] h-[350px] object-contain"
+                  className="w-[350px] h-[300px] object-contain"
                   onError={(e) => {
                     console.error('Image failed to load:', selectedImage);
                     e.target.src = '/images/chair2.png'; // Fallback image
                   }}
                 />
-                 <button className="bg-yellow-500 text-white w-10 h-10 rounded-md flex items-center justify-center text-xl hover:bg-yellow-600 transition-colors absolute right-2 z-10">
+                 <button className="bg-yellow-500 text-white w-8 h-8 rounded-md flex items-center justify-center text-sm hover:bg-yellow-600 transition-colors absolute right-2 z-10">
                 &#62;
               </button>
               </div>
@@ -222,7 +222,7 @@ const ProductDetails = () => {
                   <img
                     src={img || '/images/chair2.png'}
                     alt={`Thumbnail ${idx + 1}`}
-                    className="w-16 h-16 object-contain rounded-lg"
+                    className="w-14 h-14 object-contain rounded-lg"
                     onError={(e) => {
                       console.error('Thumbnail failed to load:', img);
                       e.target.src = '/images/chair2.png'; // Fallback image
