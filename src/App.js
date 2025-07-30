@@ -17,6 +17,8 @@ import OrderCompleted from './pages/Payment/OrderComplted';
 import Blog from './pages/Blogs/Blog';
 import BlogDetails from './pages/Blogs/BlogDetails';
 import MyAccount from './pages/MyAccount/MyAccount';
+import Terms from './pages/Terms&Conditions/Terms.jsx';
+import Privacy from './pages/Privacy/privacy.jsx';
 
 function App() {
   return (
@@ -38,7 +40,8 @@ function App() {
         <Route path="/blog" element={<Blog/>}/>
         <Route path="/blogdetails/:slug" element={<BlogDetails />} />
         <Route path="/myaccount" element={<MyAccount/>}/>
-        
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/privacy" element={<Privacy />} />
       </Routes>
     </Router>
   );
