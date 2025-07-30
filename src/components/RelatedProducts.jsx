@@ -3,7 +3,7 @@ import relatedProducts from "../data/relatedProduct.json";
 
 export default function RelatedProduct() {
   return (
-    <div className="px-6 py-12">
+    <div className="px-6 sm:px-12 lg:px-32 py-12">
       {/* Section Title */}
       <div className="text-center mb-10">
         <p className="text-xl text-gray-900 mb-2"><span className="text-yellow-500">—</span> Related Products</p>

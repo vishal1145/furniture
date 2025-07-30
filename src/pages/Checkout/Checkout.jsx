@@ -37,7 +37,7 @@ const Checkout = () => {
     <>
       <Navbar data={furnitureData.navigation} />
       <HeaderFile data={checkoutData}/>
-
+<div className="px-6 sm:px-12 lg:px-32 py-12">
       <div className="max-w-7xl mx-auto px-4 py-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {/* Billing Form */}
@@ -298,6 +298,7 @@ const Checkout = () => {
             </button>
           </div>
         </div>
+      </div>
       </div>
      <Features data={furnitureData.features}/>
       {/* ✅ Footer */}
