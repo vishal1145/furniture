@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Pagination, Stack } from "@mui/material";
 
 const PRODUCTS_PER_PAGE = 12;
 
 const ShopHero = ({ data }) => {
+  const location = useLocation();
   const [currentPage, setCurrentPage] = useState(1);
+  
+  // Search functionality states
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchSuggestions, setSearchSuggestions] = useState([]);
+  const [showSearchBar, setShowSearchBar] = useState(false);
+  const [showSuggestions, setShowSuggestions] = useState(false);
   
   // Filter states with localStorage persistence
   const [selectedCategories, setSelectedCategories] = useState(() => {
@@ -46,6 +53,17 @@ const ShopHero = ({ data }) => {
   // Filter products based on selected filters
   const getFilteredProducts = () => {
     let filtered = data.products.filter(product => {
+      // Search filter
+      if (searchQuery.trim()) {
+        const searchTerm = searchQuery.toLowerCase();
+        const productName = (product.name || product.title || '').toLowerCase();
+        
+        // Search only in product name/title
+        const matchesSearch = productName.includes(searchTerm);
+        
+        if (!matchesSearch) return false;
+      }
+      
       // Category filter
       if (selectedCategories.length > 0 && !selectedCategories.includes(product.type)) {
         return false;
@@ -164,10 +182,10 @@ const ShopHero = ({ data }) => {
     window.dispatchEvent(new Event('cartUpdated'));
   }, [addCart]);
 
-  // Reset current page when filters change
+  // Reset to first page when filters or search change
   useEffect(() => {
     setCurrentPage(1);
-  }, [selectedCategories, selectedColors, selectedMaterials, selectedAvailability, priceRange, sortBy]);
+  }, [selectedCategories, selectedColors, selectedMaterials, selectedAvailability, priceRange, sortBy, searchQuery]);
 
   const handleAddCart = (product) => {
     setAddCart((prevCart) => {
@@ -312,37 +330,88 @@ const ShopHero = ({ data }) => {
 
   const removeFilter = (filterType, filterValue) => {
     switch (filterType) {
-      case 'categories':
-        const newCategories = selectedCategories.filter(cat => cat !== filterValue);
-        setSelectedCategories(newCategories);
-        localStorage.setItem('shopFilters_categories', JSON.stringify(newCategories));
+      case 'category':
+        setSelectedCategories(prev => prev.filter(cat => cat !== filterValue));
         break;
       case 'color':
         setSelectedColors('');
-        localStorage.setItem('shopFilters_colors', JSON.stringify(''));
         break;
-      case 'materials':
-        const newMaterials = selectedMaterials.filter(mat => mat !== filterValue);
-        setSelectedMaterials(newMaterials);
-        localStorage.setItem('shopFilters_materials', JSON.stringify(newMaterials));
+      case 'material':
+        setSelectedMaterials(prev => prev.filter(mat => mat !== filterValue));
         break;
       case 'availability':
-        const newAvailability = selectedAvailability.filter(avail => avail !== filterValue);
-        setSelectedAvailability(newAvailability);
-        localStorage.setItem('shopFilters_availability', JSON.stringify(newAvailability));
+        setSelectedAvailability(prev => prev.filter(avail => avail !== filterValue));
         break;
       case 'price':
         setPriceRange(data.filters.price.max);
-        localStorage.setItem('shopFilters_priceRange', JSON.stringify(data.filters.price.max));
-        break;
-      case 'sort':
-        setSortBy('Default');
-        localStorage.setItem('shopFilters_sortBy', JSON.stringify('Default'));
-        break;
-      default:
         break;
     }
-    updateActiveFilters();
+  };
+
+  // Search functionality
+  useEffect(() => {
+    // Check if search should be opened from navbar
+    if (location.state?.openSearch) {
+      setShowSearchBar(true);
+      // Clear the state to prevent reopening on refresh
+      window.history.replaceState({}, document.title);
+    }
+  }, [location.state]);
+
+  const handleSearchInput = (query) => {
+    setSearchQuery(query);
+    
+    if (query.trim().length === 0) {
+      setSearchSuggestions([]);
+      setShowSuggestions(false);
+      return;
+    }
+    
+    console.log('Searching for:', query);
+    console.log('All products:', data.products);
+    
+    // Generate suggestions based on product names
+    const suggestions = data.products
+      .filter(product => {
+        const searchTerm = query.toLowerCase();
+        const productName = (product.name || product.title || '').toLowerCase();
+        
+        console.log('Checking product:', {
+          name: productName,
+          searchTerm: searchTerm,
+          matches: productName.includes(searchTerm)
+        });
+        
+        // Primary search: search in product name/title
+        return productName.includes(searchTerm);
+      })
+      .slice(0, 5); // Limit to 5 suggestions
+    
+    console.log('Search suggestions:', suggestions);
+    setSearchSuggestions(suggestions);
+    setShowSuggestions(true);
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      // The search filtering is already handled by getFilteredProducts function
+      setShowSuggestions(false);
+    }
+  };
+
+  const handleSuggestionClick = (product) => {
+    setSearchQuery(product.name || product.title);
+    setShowSuggestions(false);
+  };
+
+  const toggleSearchBar = () => {
+    setShowSearchBar(!showSearchBar);
+    if (!showSearchBar) {
+      setSearchQuery('');
+      setSearchSuggestions([]);
+      setShowSuggestions(false);
+    }
   };
 
   // Helper to render page numbers like: 1 2 3 ... 10
@@ -488,6 +557,96 @@ const ShopHero = ({ data }) => {
 
         {/* Main Content */}
         <main className="w-full lg:w-[70%] flex-1">
+          {/* Search Bar */}
+          <div className="mb-6">
+            <div className="flex items-center gap-4">
+              <button
+                onClick={toggleSearchBar}
+                className="flex items-center gap-2 px-4 py-2 bg-green-900 text-white rounded-lg hover:bg-green-800 transition-colors"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                {showSearchBar ? 'Hide Search' : 'Show Search'}
+              </button>
+              
+              {showSearchBar && (
+                <div className="flex-1 relative">
+                  <form onSubmit={handleSearchSubmit} className="flex items-center gap-2">
+                    <div className="relative flex-1">
+                      <input
+                        type="text"
+                        placeholder="Search for products..."
+                        value={searchQuery}
+                        onChange={(e) => handleSearchInput(e.target.value)}
+                        className="w-full px-4 py-2 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-900 focus:border-transparent"
+                      />
+                      <svg 
+                        className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400"
+                        fill="none" 
+                        stroke="currentColor" 
+                        strokeWidth="2" 
+                        viewBox="0 0 24 24"
+                      >
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                      </svg>
+                    </div>
+                    <button
+                      type="submit"
+                      className="px-4 py-2 bg-green-900 text-white rounded-lg hover:bg-green-800 transition-colors"
+                    >
+                      Search
+                    </button>
+                  </form>
+                  
+                  {/* Search Suggestions */}
+                  {showSuggestions && searchSuggestions.length > 0 && (
+                    <div className="absolute top-full left-0 right-0 bg-white border border-gray-300 rounded-lg shadow-lg z-10 mt-1">
+                      {searchSuggestions.map((product, index) => (
+                        <button
+                          key={`${product.id}-${index}`}
+                          onClick={() => handleSuggestionClick(product)}
+                          className="w-full flex items-center gap-3 p-3 hover:bg-gray-50 text-left border-b border-gray-100 last:border-b-0"
+                        >
+                          <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <img
+                              src={product.image || '/images/chair2.png'}
+                              alt={product.name || product.title}
+                              className="w-8 h-8 object-contain"
+                              onError={(e) => {
+                                e.target.src = '/images/chair2.png';
+                              }}
+                            />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h4 className="font-medium text-gray-900 truncate">
+                              {product.name || product.title}
+                            </h4>
+                            <p className="text-sm text-gray-500 truncate">
+                              {product.type} • ${product.price}
+                            </p>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+            
+            {/* Search Results Info */}
+            {searchQuery.trim() && (
+              <div className="mt-2 text-sm text-gray-600">
+                {filteredProducts.length > 0 
+                  ? `Found ${filteredProducts.length} product(s) for "${searchQuery}"`
+                  : `No products found for "${searchQuery}"`
+                }
+              </div>
+            )}
+          </div>
+          
           {/* Top Bar */}
           <div className="flex flex-wrap items-center justify-between mb-4">
             <div className="text-gray-700 text-sm">
@@ -528,8 +687,8 @@ const ShopHero = ({ data }) => {
                 className="text-green-900 text-sm underline ml-2"
                 onClick={clearAllFilters}
               >
-                Clear All
-              </button>
+              Clear All
+            </button>
             )}
           </div>
           {/* Product Grid */}
