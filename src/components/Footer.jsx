@@ -2,8 +2,8 @@ import React from 'react';
 
 const Footer = ({ data }) => {
   return (
-    <footer className="bg-green-900 text-white py-12 ">
-      <div className=" px-6 sm:px-12 lg:px-32">
+    <footer className="bg-green-900 text-white">
+      <div className=" px-6 sm:px-12 lg:px-32 py-12">
       <div className="max-w-7xl mx-auto  grid grid-cols-1 md:grid-cols-5 gap-10 text-left">
         {/* Logo and Description */}
         <div className="text-center md:text-left">
