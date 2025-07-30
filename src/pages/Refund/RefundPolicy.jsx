@@ -11,8 +11,10 @@ export default function ReturnPolicy() {
     <div>
       <Navbar data={furnitureData.navigation} />
       <HeaderFile data={refundData.header} />
+ <div className="px-6 sm:px-12 lg:px-32 py-12">
 
-     <div className=" flex flex-col px-6 sm:px-12 lg:px-32 py-4 gap-10">
+      <div className="max-w-7xl mx-auto ">
+     <div className=" flex flex-col  gap-10">
       {refundData.sections.map((section, index) => (
         <div key={index} className="flex flex-col gap-5">
           <h1 className="text-[24px] font-bold text-green-900">{section.title}</h1>
@@ -24,7 +26,8 @@ export default function ReturnPolicy() {
         </div>
       ))}
     </div>
-
+    </div>
+</div>
       <Features data={furnitureData.features} />
       <Footer data={furnitureData.footer} />
 

@@ -437,7 +437,8 @@ const ShopHero = ({ data }) => {
 
   return (
     <div className=" px-2 sm:px-4 md:px-8 bg-white py-8 ">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8">
+      <div className="max-w-7xl mx-auto ">
+        <div className="flex flex-col lg:flex-row gap-8">
         {/* Filter Sidebar */}
         <aside className="w-full lg:w-[30%] min-w-[220px] px-0 md:px-8 lg:px-8 mb-8 lg:mb-0">
           <h2 className="font-semibold text-lg mb-4">Filter Options</h2>
@@ -833,6 +834,7 @@ const ShopHero = ({ data }) => {
             </button>
           </div> */}
         </main>
+        </div>
       </div>
     </div>
   );

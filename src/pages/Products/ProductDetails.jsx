@@ -188,33 +188,33 @@ const ProductDetails = () => {
           <div className="flex flex-col items-center justify-center w-full md:w-1/2">
             <div className="flex items-center gap-4">
             
-              <div className="bg-gray-50 rounded-2xl p-4 flex items-center justify-center">
-                  <button className="bg-green-900 text-white w-12 h-12 rounded-md flex items-center justify-center text-2xl">
+              <div className="bg-gray-50 rounded-2xl p-4 flex items-center justify-center relative">
+                  <button className="bg-green-900 text-white w-10 h-10 rounded-md flex items-center justify-center text-xl hover:bg-green-800 transition-colors absolute left-2 z-10">
                 &#60;
               </button>
                 <img
                   src={selectedImage || displayProduct.image || '/images/chair2.png'}
                   alt={displayProduct.title || 'Product Image'}
-                  className="w-[600px] h-[500px] object-contain"
+                  className="w-[400px] h-[350px] object-contain"
                   onError={(e) => {
                     console.error('Image failed to load:', selectedImage);
                     e.target.src = '/images/chair2.png'; // Fallback image
                   }}
                 />
-                 <button className="bg-yellow-500 text-white w-12 h-12 rounded-md flex items-center justify-center text-2xl">
+                 <button className="bg-yellow-500 text-white w-10 h-10 rounded-md flex items-center justify-center text-xl hover:bg-yellow-600 transition-colors absolute right-2 z-10">
                 &#62;
               </button>
               </div>
              
             </div>
             {/* --- Gallery Thumbnails ---   import RelatedProducts from '../../components/RelatedProducts';*/}
-            <div className="flex gap-4 mt-6">
+            <div className="flex gap-3 mt-6">
               {displayProduct.images?.map((img, idx) => (
                 <button
                   key={img}
                   onClick={() => setSelectedImage(img)}
                   className="
-                    rounded-xl p-1 transition-all
+                    rounded-lg p-1 transition-all
                     border-2 border-transparent bg-gray-50 hover:border-green-900
                   "
                   style={{ outline: 'none' }}
@@ -222,7 +222,7 @@ const ProductDetails = () => {
                   <img
                     src={img || '/images/chair2.png'}
                     alt={`Thumbnail ${idx + 1}`}
-                    className="w-24 h-24 object-contain rounded-xl"
+                    className="w-16 h-16 object-contain rounded-lg"
                     onError={(e) => {
                       console.error('Thumbnail failed to load:', img);
                       e.target.src = '/images/chair2.png'; // Fallback image
@@ -337,26 +337,38 @@ const ProductDetails = () => {
               <div className="flex items-center gap-2 mt-2 ">
                 <span>Share :</span>
                 <a
-                  href="#"
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}&quote=${encodeURIComponent(displayProduct.title || 'Check out this amazing furniture!')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-green-800 text-white hover:bg-green-900 rounded-full w-7 h-7 flex items-center justify-center shadow transition"
+                  title="Share on Facebook"
                 >
                   <FaFacebookF />
                 </a>
                 <a
-                  href="#"
+                  href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(displayProduct.title || 'Check out this amazing furniture!')}&hashtags=furniture,home`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-green-800 text-white hover:bg-green-900 rounded-full  w-7 h-7 flex items-center justify-center shadow transition"
+                  title="Share on Twitter"
                 >
                   <FaTwitter />
                 </a>
                 <a
-                  href="#"
+                  href={`https://pinterest.com/pin/create/button/?url=${encodeURIComponent(window.location.href)}&media=${encodeURIComponent(displayProduct.image || '')}&description=${encodeURIComponent(displayProduct.title || 'Amazing furniture from AlgoFurnish!')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-green-800 text-white hover:bg-green-900 rounded-full w-7 h-7 flex items-center justify-center shadow transition"
+                  title="Share on Pinterest"
                 >
                   <FaPinterestP />
                 </a>
                 <a
-                  href="#"
+                  href={`https://www.instagram.com/?url=${encodeURIComponent(window.location.href)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-green-800 text-white hover:bg-green-900 rounded-full w-7 h-7 flex items-center justify-center shadow transition"
+                  title="Share on Instagram"
                 >
                   <FaInstagram />
                 </a>

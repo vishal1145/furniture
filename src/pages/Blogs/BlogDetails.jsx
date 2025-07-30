@@ -38,13 +38,31 @@ const BlogDetails = () => {
           <div className="sticky top-8">
             <h3 className="text-sm font-bold text-gray-400 mb-4 uppercase">Share</h3>
             <div className="flex flex-col gap-3">
-              <a href="#" className="w-10 h-10 bg-green-800 rounded-full flex items-center justify-center text-white hover:bg-green-700 transition-colors">
+              <a 
+                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}&quote=${encodeURIComponent(blog.title || 'Check out this amazing blog post!')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-green-800 rounded-full flex items-center justify-center text-white hover:bg-green-700 transition-colors"
+                title="Share on Facebook"
+              >
                 <FaFacebookF />
               </a>
-              <a href="#" className="w-10 h-10 bg-green-800 rounded-full flex items-center justify-center text-white hover:bg-green-700 transition-colors">
+              <a 
+                href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(blog.title || 'Check out this amazing blog post!')}&hashtags=furniture,blog,home`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-green-800 rounded-full flex items-center justify-center text-white hover:bg-green-700 transition-colors"
+                title="Share on Twitter"
+              >
                 <FaTwitter />
               </a>
-              <a href="#" className="w-10 h-10 bg-green-800 rounded-full flex items-center justify-center text-white hover:bg-green-700 transition-colors">
+              <a 
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}&title=${encodeURIComponent(blog.title || 'Amazing blog post from AlgoFurnish!')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-green-800 rounded-full flex items-center justify-center text-white hover:bg-green-700 transition-colors"
+                title="Share on LinkedIn"
+              >
                 <FaLinkedinIn />
               </a>
             </div>
@@ -267,7 +285,7 @@ const BlogDetails = () => {
               <p className="text-lg font-bold mt-1"><span className="text-yellow-400">20% Off</span> on Latest</p>
               <p className="text-lg font-bold">Furniture</p>
               <a
-                href="#"
+                href="/shop"
                 className="mt-3 inline-block bg-yellow-500 text-black px-4 py-2 rounded-full text-sm font-medium hover:bg-yellow-600 transition-colors"
               >
                 Shop Now

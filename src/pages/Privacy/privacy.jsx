@@ -32,8 +32,9 @@ const Privacy = () => {
     <>
       <Navbar data={furnitureData.navigation} />
       <HeaderFile data={privacyData} />
+       <div className="px-6 sm:px-12 lg:px-32 py-12">
 
-      <div className="max-w-7xl mx-auto px-4 py-12">
+      <div className="max-w-7xl mx-auto ">
         {/* Page Title (optional since HeaderFile already has title) */}
         {/* <h1 className="text-3xl md:text-4xl font-bold mb-6 text-center text-gray-800">{title}</h1> */}
 
@@ -69,7 +70,7 @@ const Privacy = () => {
           ))}
         </div>
       </div>
-
+</div>
       <Features data={furnitureData.features} />
       <Footer data={furnitureData.footer} />
     </>

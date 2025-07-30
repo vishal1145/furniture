@@ -16,7 +16,8 @@ const Terms = () => {
      <>
       <Navbar data={furnitureData.navigation} />
       <HeaderFile data={termsData} />
-    <div className="max-w-7xl mx-auto px-4 py-12">
+      <div className="px-6 sm:px-12 lg:px-32 py-12">
+    <div className="max-w-7xl mx-auto ">
       {/* <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center text-gray-800">Terms & Conditions</h1> */}
       <div className="space-y-10">
         {terms.map((term, index) => (
@@ -26,6 +27,7 @@ const Terms = () => {
           </div>
         ))}
       </div>
+    </div>
     </div>
        <Features data={furnitureData.features}/>
       <Footer data={furnitureData.footer} />

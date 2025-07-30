@@ -521,7 +521,7 @@
       "Customer Services": [
         { "name": "My Account", "href": "/myaccount" },
         { "name": "Track Your Order", "href": "/trackorder" },
-        { "name": "Return", "href": "#" },
+
         { "name": "FAQ", "href": "/faq" }
       ],
       "Our Information": [

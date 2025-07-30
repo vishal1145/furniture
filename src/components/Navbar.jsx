@@ -62,13 +62,18 @@ const navigate = useNavigate();
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between w-full">
           {/* Logo */}
-          <div className="flex items-center gap-2"
+          <div className="flex items-center "
            onClick={() => navigate('/')}>
 
-            <div className="bg-green-800 w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm">
-              {data.logo.icon}
-            </div>
-            <h1 className="text-xl font-semibold text-gray-800">
+           <div className=" w-20 h-20 rounded-full flex items-center justify-center overflow-hidden">
+  <img
+    src="/logofuni.png"  // 👈 path to your logo in public folder
+    alt="Logo"
+    className="w-37 h-37 object-contain"
+  />
+</div>
+
+            <h1 className="text-3xl font-semibold text-gray-800">
               {data.logo.text}<span className="text-yellow-500">{data.logo.accent}</span>
             </h1>
           </div>
