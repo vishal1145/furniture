@@ -52,8 +52,8 @@ const Testimonials = ({ data }) => {
   const testimonials = dummyTestimonials;
 
   return (
-    <section className="bg-gray-50 py-16">
-      <div className="max-w-7xl mx-auto text-center px-6 sm:px-12 lg:px-32">
+    <section className="bg-gray-50 py-16 px-6 sm:px-12 lg:px-32">
+      <div className="max-w-7xl mx-auto text-center ">
         <div className="flex flex-col items-center justify-center mb-2">
           <p className="text-xl text-gray-900 text-left">
             <span className="text-yellow-500">—</span> {data.subtitle}

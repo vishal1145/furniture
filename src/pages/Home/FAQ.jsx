@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 
 const FAQ = ({ data }) => {
   const navigate = useNavigate();
-  // Set 'open: true' for all FAQs to show answers by default
-  const [faqs, setFaqs] = useState(data.items.map(faq => ({ ...faq, open: true })));
+  // Set only the 2nd FAQ (index 1) to be open by default
+  const [faqs, setFaqs] = useState(data.items.map((faq, index) => ({ ...faq, open: index === 1 })));
 
   const toggleFAQ = (index) => {
     setFaqs(faqs.map((faq, i) =>
