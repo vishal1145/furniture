@@ -17,7 +17,7 @@ const FAQ = ({ data }) => {
   };
 
   return (
-    <section className="bg-white py-16 ">
+    <section className="bg-white px-32 py-16 ">
       <div className="max-w-7xl mx-auto text-center mb-12">
         <p className="text-xl text-gray-900 mb-1"><span className="text-yellow-500">—</span>{data.subtitle}</p>
         <h2 className="text-4xl font-medium text-gray-900">

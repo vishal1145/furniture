@@ -527,7 +527,7 @@
       "Our Information": [
         { "name": "Privacy", "href": "/privacy" },
         { "name": "User Terms & Condition", "href": "/terms" },
-        { "name": "Return Policy", "href": "#" }
+        { "name": "Return Policy", "href": "/RefundPolicy" }
       ],
       "Contact Info": [
         { "name": "+0123-456-789", "href": "tel:+0123-456-789" },

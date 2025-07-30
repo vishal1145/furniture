@@ -19,6 +19,7 @@ import BlogDetails from './pages/Blogs/BlogDetails';
 import MyAccount from './pages/MyAccount/MyAccount';
 import Terms from './pages/Terms&Conditions/Terms.jsx';
 import Privacy from './pages/Privacy/privacy.jsx';
+import RefundPolicy from './pages/Refund/RefundPolicy';
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
         <Route path="/myaccount" element={<MyAccount/>}/>
         <Route path="/terms" element={<Terms />} />
         <Route path="/privacy" element={<Privacy />} />
+        <Route path='/RefundPolicy' element={<RefundPolicy/>} />
       </Routes>
     </Router>
   );
