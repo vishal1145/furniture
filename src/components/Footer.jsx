@@ -4,7 +4,7 @@ const Footer = ({ data }) => {
   return (
     <footer className="bg-green-900 text-white pt-16 ">
       <div className=" px-6 sm:px-12 lg:px-32">
-      <div className="max-w-7xl mx-auto px-3 grid grid-cols-1 md:grid-cols-5 gap-10 text-left">
+      <div className="max-w-7xl mx-auto  grid grid-cols-1 md:grid-cols-5 gap-10 text-left">
         {/* Logo and Description */}
         <div className="text-center md:text-left">
           <div className="flex items-center mb-4 justify-center md:justify-start">
@@ -16,7 +16,7 @@ const Footer = ({ data }) => {
             </span>
           </div>
           <p className="text-sm text-gray-300 mb-4">{data.description}</p>
-<div className="flex justify-center space-x-2 mt-2">
+<div className="flex justify-center space-x-2 mt-2 ">
 {[
   { name: 'Facebook', icon: 'fab fa-facebook-f', url: 'https://facebook.com/yourpage' },
   { name: 'Twitter', icon: 'fab fa-twitter', url: 'https://twitter.com/yourhandle' },

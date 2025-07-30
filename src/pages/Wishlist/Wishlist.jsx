@@ -102,8 +102,8 @@ const Wishlist = () => {
           { label: "Wishlist", href: "/wishlist" }
         ]
       }} />
-
-      <div className="max-w-7xl mx-auto px-4 py-10">
+<div className="px-6 sm:px-12 lg:px-32 py-12">
+      <div className="max-w-7xl mx-auto ">
         <h2 className="text-2xl font-bold mb-8">Your Wishlist ({wishlistItems.length} items)</h2>
 
         {wishlistItems.length === 0 ? (
@@ -213,6 +213,7 @@ const Wishlist = () => {
             </div>
           </>
         )}
+      </div>
       </div>
       <Features data={furnitureData.features} />
       <Footer data={furnitureData.footer} />

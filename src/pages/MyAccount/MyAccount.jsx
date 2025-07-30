@@ -425,7 +425,8 @@ const MyAccount = () => {
     <>
     <Navbar data={furnitureData.navigation} />
       <HeaderFile data={data} />
-    <section className="max-w-7xl mx-auto px-4 py-12">
+<div className="px-6 sm:px-12 lg:px-32 py-12">
+    <div className="max-w-7xl mx-auto  ">
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Sidebar */}
         <div className="w-full lg:w-1/4 space-y-3">
@@ -454,8 +455,8 @@ const MyAccount = () => {
         {/* Content Area */}
         {renderContent()}
       </div>
-    </section>
-    
+    </div>
+    </div>
           <Features data={furnitureData.features}/>
       <Footer data={furnitureData.footer} />
     </>

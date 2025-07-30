@@ -54,8 +54,8 @@ const Cart = () => {
           { label: "Cart", href: "/cart" }
         ]
       }} />
-
-      <div className="p-6 max-w-7xl mx-auto">
+<div className="px-6 sm:px-12 lg:px-32 py-12">
+      <div className=" max-w-7xl mx-auto">
         {cartItems.length === 0 ? (
           <div className="text-center py-12">
             <div className="text-gray-400 text-6xl mb-4">🛒</div>
@@ -175,6 +175,7 @@ const Cart = () => {
             </div>
           </div>
         )}
+      </div>
       </div>
       <Features data={furnitureData.features} />
       <Footer data={furnitureData.footer} />

@@ -11,8 +11,8 @@ const Team = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
 
   return (
-    <section className="py-16 bg-white text-center">
-      <div className="max-w-7xl mx-auto px-4">
+    <section className="px-6 sm:px-12 lg:px-32 py-16 bg-white text-center">
+      <div className="max-w-7xl mx-auto ">
         {/* Section Heading */}
         <p className="text-xl text-gray-900 text-center mb-2">
           <span className="text-yellow-500">—</span> Our Team
