@@ -99,7 +99,7 @@ const Hero = ({ data }) => {
           {/* Text Content */}
           <div className="space-y-4 text-left">
             <div className="inline-flex bg-white text-black px-4 py-2 rounded-full text-sm items-center gap-2">
-              <img src="/icons/start.svg" className="w-4 h-4" alt="star" />
+              <img src="/images/start.png" className="w-6 h-6" alt="star" />
               {data.badge.text}
             </div>
 
