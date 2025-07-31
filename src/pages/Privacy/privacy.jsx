@@ -7,8 +7,9 @@ import Footer from '../../components/Footer';
 import Features from '../../components/Features';
 
 const Privacy = () => {
-  const { title, breadcrumb, sections } = privacyData;
-  const storeName = "AlgoFurnish"; // ✅ Replace with your real store name
+  // Remove unused destructured variables
+  const {  sections } = privacyData;
+ // ✅ Replace with your real store name
 
   // Helper to render section content
   const renderContent = (section) => {

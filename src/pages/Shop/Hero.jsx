@@ -8,11 +8,8 @@ const ShopHero = ({ data }) => {
   const location = useLocation();
   const [currentPage, setCurrentPage] = useState(1);
   
-  // Search functionality states
-  const [searchQuery, setSearchQuery] = useState('');
-  const [searchSuggestions, setSearchSuggestions] = useState([]);
-  const [showSearchBar, setShowSearchBar] = useState(false);
-  const [showSuggestions, setShowSuggestions] = useState(false);
+  // Get search query from location state
+  const searchQuery = location.state?.searchQuery;
   
   // Filter states with localStorage persistence
   const [selectedCategories, setSelectedCategories] = useState(() => {
@@ -50,18 +47,18 @@ const ShopHero = ({ data }) => {
     return saved ? JSON.parse(saved) : 'Default';
   });
 
-  // Filter products based on selected filters
+  // Filter products based on selected filters and search query
   const getFilteredProducts = () => {
     let filtered = data.products.filter(product => {
-      // Search filter
-      if (searchQuery.trim()) {
-        const searchTerm = searchQuery.toLowerCase();
+      // Search filter - check if product name contains search query
+      if (searchQuery && searchQuery.trim()) {
+        const searchTerm = searchQuery.toLowerCase().trim();
         const productName = (product.name || product.title || '').toLowerCase();
         
-        // Search only in product name/title
-        const matchesSearch = productName.includes(searchTerm);
-        
-        if (!matchesSearch) return false;
+        // Check if product name contains the search term
+        if (!productName.includes(searchTerm)) {
+          return false;
+        }
       }
       
       // Category filter
@@ -345,99 +342,38 @@ const ShopHero = ({ data }) => {
       case 'price':
         setPriceRange(data.filters.price.max);
         break;
+      default:
+        // default logic or return original array
+        return filteredProducts;
     }
-  };
-
-  // Search functionality
-  useEffect(() => {
-    // Check if search should be opened from navbar
-    if (location.state?.openSearch) {
-      setShowSearchBar(true);
-      // Clear the state to prevent reopening on refresh
-      window.history.replaceState({}, document.title);
-    }
-  }, [location.state]);
-
-  const handleSearchInput = (query) => {
-    setSearchQuery(query);
-    
-    if (query.trim().length === 0) {
-      setSearchSuggestions([]);
-      setShowSuggestions(false);
-      return;
-    }
-    
-    console.log('Searching for:', query);
-    console.log('All products:', data.products);
-    
-    // Generate suggestions based on product names
-    const suggestions = data.products
-      .filter(product => {
-        const searchTerm = query.toLowerCase();
-        const productName = (product.name || product.title || '').toLowerCase();
-        
-        console.log('Checking product:', {
-          name: productName,
-          searchTerm: searchTerm,
-          matches: productName.includes(searchTerm)
-        });
-        
-        // Primary search: search in product name/title
-        return productName.includes(searchTerm);
-      })
-      .slice(0, 5); // Limit to 5 suggestions
-    
-    console.log('Search suggestions:', suggestions);
-    setSearchSuggestions(suggestions);
-    setShowSuggestions(true);
-  };
-
-  const handleSearchSubmit = (e) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      // The search filtering is already handled by getFilteredProducts function
-      setShowSuggestions(false);
-    }
-  };
-
-  const handleSuggestionClick = (product) => {
-    setSearchQuery(product.name || product.title);
-    setShowSuggestions(false);
-  };
-
-  const toggleSearchBar = () => {
-    setShowSearchBar(!showSearchBar);
-    if (!showSearchBar) {
-      setSearchQuery('');
-      setSearchSuggestions([]);
-      setShowSuggestions(false);
-    }
-  };
-
-  // Helper to render page numbers like: 1 2 3 ... 10
-  const renderPageNumbers = () => {
-    const pages = [];
-    if (totalPages <= 5) {
-      for (let i = 1; i <= totalPages; i++) pages.push(i);
-    } else {
-      pages.push(1);
-      if (currentPage > 3) pages.push("...");
-      for (
-        let i = Math.max(2, currentPage - 1);
-        i <= Math.min(totalPages - 1, currentPage + 1);
-        i++
-      ) {
-        pages.push(i);
-      }
-      if (currentPage < totalPages - 2) pages.push("...");
-      pages.push(totalPages);
-    }
-    return pages;
   };
 
   return (
     <div className="px-6 sm:px-12 lg:px-32 bg-white py-8 ">
       <div className="max-w-7xl mx-auto ">
+        {/* Search Results Header */}
+        {searchQuery && (
+          <div className="mb-6 text-center">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-2">
+              Search Results for "{searchQuery}"
+            </h2>
+            <p className="text-gray-600">
+              Found {filteredProducts.length} product{filteredProducts.length !== 1 ? 's' : ''}
+            </p>
+            {filteredProducts.length === 0 && (
+              <div className="mt-4">
+                <p className="text-gray-500">No products found for "{searchQuery}"</p>
+                <Link 
+                  to="/shop"
+                  className="inline-block mt-2 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
+                >
+                  View All Products
+                </Link>
+              </div>
+            )}
+          </div>
+        )}
+
         <div className="flex flex-col lg:flex-row gap-8">
         {/* Filter Sidebar */}
         <aside className="w-full lg:w-[30%] min-w-[220px] px-0 md:px-8 lg:px-8 mb-8 lg:mb-0">
@@ -558,96 +494,6 @@ const ShopHero = ({ data }) => {
 
         {/* Main Content */}
         <main className="w-full lg:w-[70%] flex-1">
-          {/* Search Bar */}
-          <div className="mb-6">
-            <div className="flex items-center gap-4">
-              <button
-                onClick={toggleSearchBar}
-                className="flex items-center gap-2 px-4 py-2 bg-green-900 text-white rounded-lg hover:bg-green-800 transition-colors"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-                {showSearchBar ? 'Hide Search' : 'Show Search'}
-              </button>
-              
-              {showSearchBar && (
-                <div className="flex-1 relative">
-                  <form onSubmit={handleSearchSubmit} className="flex items-center gap-2">
-                    <div className="relative flex-1">
-                      <input
-                        type="text"
-                        placeholder="Search for products..."
-                        value={searchQuery}
-                        onChange={(e) => handleSearchInput(e.target.value)}
-                        className="w-full px-4 py-2 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-900 focus:border-transparent"
-                      />
-                      <svg 
-                        className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400"
-                        fill="none" 
-                        stroke="currentColor" 
-                        strokeWidth="2" 
-                        viewBox="0 0 24 24"
-                      >
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                      </svg>
-                    </div>
-                    <button
-                      type="submit"
-                      className="px-4 py-2 bg-green-900 text-white rounded-lg hover:bg-green-800 transition-colors"
-                    >
-                      Search
-                    </button>
-                  </form>
-                  
-                  {/* Search Suggestions */}
-                  {showSuggestions && searchSuggestions.length > 0 && (
-                    <div className="absolute top-full left-0 right-0 bg-white border border-gray-300 rounded-lg shadow-lg z-10 mt-1">
-                      {searchSuggestions.map((product, index) => (
-                        <button
-                          key={`${product.id}-${index}`}
-                          onClick={() => handleSuggestionClick(product)}
-                          className="w-full flex items-center gap-3 p-3 hover:bg-gray-50 text-left border-b border-gray-100 last:border-b-0"
-                        >
-                          <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <img
-                              src={product.image || '/images/chair2.png'}
-                              alt={product.name || product.title}
-                              className="w-8 h-8 object-contain"
-                              onError={(e) => {
-                                e.target.src = '/images/chair2.png';
-                              }}
-                            />
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <h4 className="font-medium text-gray-900 truncate">
-                              {product.name || product.title}
-                            </h4>
-                            <p className="text-sm text-gray-500 truncate">
-                              {product.type} • ${product.price}
-                            </p>
-                          </div>
-                        </button>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              )}
-            </div>
-            
-            {/* Search Results Info */}
-            {searchQuery.trim() && (
-              <div className="mt-2 text-sm text-gray-600">
-                {filteredProducts.length > 0 
-                  ? `Found ${filteredProducts.length} product(s) for "${searchQuery}"`
-                  : `No products found for "${searchQuery}"`
-                }
-              </div>
-            )}
-          </div>
-          
           {/* Top Bar */}
           <div className="flex flex-wrap items-center justify-between mb-4">
             <div className="text-gray-700 text-sm">
@@ -778,7 +624,6 @@ const ShopHero = ({ data }) => {
           </div>
 
           {/* Pagination */}
-
           <Stack spacing={2} className="mt-10">
             <Pagination
               count={totalPages}
@@ -788,51 +633,6 @@ const ShopHero = ({ data }) => {
               className="flex justify-center"
             />
           </Stack>
-
-          {/* <div className="flex justify-center items-center gap-3 mt-10 select-none">
-            {/* Left Arrow 
-            <button
-              onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-              disabled={currentPage === 1}
-              className="text-2xl text-gray-700 disabled:text-gray-300 bg-transparent border-none"
-              style={{ background: "none" }}
-            >
-              &lt;
-            </button>
-            {/* Static Page Numbers 
-            {["1", "2", "3", "4", "...", "10"].map((page, idx) =>
-              page === "..." ? (
-                <span key={idx} className="px-2 text-gray-400">
-                  ...
-                </span>
-              ) : (
-                <button
-                  key={page}
-                  onClick={() => setCurrentPage(Number(page))}
-                  className={`mx-1 ${
-                    currentPage === Number(page)
-                      ? "bg-yellow-500 text-black w-8 h-8 rounded-full font-semibold"
-                      : "text-gray-700"
-                  }`}
-                  style={{
-                    minWidth: currentPage === Number(page) ? "2.5rem" : "auto",
-                    minHeight: currentPage === Number(page) ? "2.5rem" : "auto",
-                  }}
-                >
-                  {page}
-                </button>
-              )
-            )}
-            {/* Right Arrow 
-            <button
-              onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
-              disabled={currentPage === totalPages}
-              className="text-2xl text-gray-700 disabled:text-gray-300 bg-transparent border-none"
-              style={{ background: "none" }}
-            >
-              &gt;
-            </button>
-          </div> */}
         </main>
         </div>
       </div>

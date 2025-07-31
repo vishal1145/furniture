@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams, useLocation } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import productData from '../../data/productDetails.json';
 
 import RelatedProducts from '../../components/RelatedProducts';
@@ -7,8 +7,8 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import furnitureData from '../../data/furnitureData.json'; 
 import HeaderFile from '../../components/Header';
-import shopData from '../../data/shop.json';
-import { FaStar, FaFacebookF, FaTwitter, FaPinterestP, FaInstagram, FaCheckCircle } from "react-icons/fa"; // For check icon, or use your own SVG
+
+import { FaStar, FaFacebookF, FaTwitter, FaPinterestP,  } from "react-icons/fa"; // For check icon, or use your own SVG
 import Features from '../../components/Features';
 
 const TABS = [
@@ -284,9 +284,9 @@ const ProductDetails = () => {
             </div>
 
             {/* Quantity and Actions */}
-            <div className="flex items-center gap-4 mt-4">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-4">
               {/* Quantity Selector */}
-              <div className="flex items-center border border-gray-300 rounded-full overflow-hidden h-12 min-w-[144px] bg-white">
+              <div className="flex items-center border border-gray-300 rounded-full overflow-hidden h-12 min-w-[144px] bg-white w-full sm:w-auto">
                 <button
                   className="w-12 h-12 flex items-center justify-center text-2xl text-gray-700 focus:outline-none"
                   onClick={() => setQuantity(q => Math.max(1, q - 1))}
@@ -309,26 +309,28 @@ const ProductDetails = () => {
               </div>
 
               {/* Action Buttons */}
-              <button 
-                className={`px-8 py-3 rounded-full text-base shadow transition ${
-                  cartSuccess 
-                    ? 'bg-green-600 text-white' 
-                    : 'bg-green-800 hover:bg-green-900 text-white'
-                }`}
-                onClick={() => handleAddCart(displayProduct)}
-                disabled={cartSuccess}
-              >
-                {cartSuccess ? 'Added to Cart!' : 'Add To Cart'}
-              </button>
-              <button className="bg-yellow-500 hover:bg-yellow-500 text-gray-900 px-8 py-3 rounded-full text-base shadow transition">
-                Buy Now
-              </button>
-              <button 
-                className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition"
-                onClick={() => toggleHeart(displayProduct)}
-              >
-                <i className={`${wishlist.some(item => item.id === displayProduct.id) ? "fas" : "far"} fa-heart text-lg transition-all duration-300 ${wishlist.some(item => item.id === displayProduct.id) ? 'text-red-500' : 'text-gray-600'}`}></i>
-              </button>
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
+                <button 
+                  className={`px-6 sm:px-8 py-3 rounded-full text-sm sm:text-base shadow transition flex-1 sm:flex-none ${
+                    cartSuccess 
+                      ? 'bg-green-600 text-white' 
+                      : 'bg-green-800 hover:bg-green-900 text-white'
+                  }`}
+                  onClick={() => handleAddCart(displayProduct)}
+                  disabled={cartSuccess}
+                >
+                  {cartSuccess ? 'Added to Cart!' : 'Add To Cart'}
+                </button>
+                <button className="px-6 sm:px-8 py-3 rounded-full text-sm sm:text-base shadow transition bg-yellow-500 hover:bg-yellow-600 text-gray-900 flex-1 sm:flex-none">
+                  Buy Now
+                </button>
+                <button 
+                  className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition flex-shrink-0"
+                  onClick={() => toggleHeart(displayProduct)}
+                >
+                  <i className={`${wishlist.some(item => item.id === displayProduct.id) ? "fas" : "far"} fa-heart text-lg transition-all duration-300 ${wishlist.some(item => item.id === displayProduct.id) ? 'text-red-500' : 'text-gray-600'}`}></i>
+                </button>
+              </div>
             </div>
 
             {/* SKU, Tags, Share */}

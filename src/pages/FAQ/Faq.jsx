@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import faqData from "../../data/faq.json";
 import furnitureData from "../../data/furnitureData.json";
 import Navbar from "../../components/Navbar";

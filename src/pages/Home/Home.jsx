@@ -8,7 +8,6 @@ import Products from './Products'
 import Categories from './Categories';
 import FlashSale from './FlashSale';
 import Deals from './Deals'
-import Pramotions from './Promotions'
 import Promotions from './Promotions';
 import Blogs from './Blogs';
 import Instagram from './Instagram'

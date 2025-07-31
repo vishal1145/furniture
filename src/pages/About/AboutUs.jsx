@@ -27,11 +27,11 @@ const AboutUs = () => {
           </h2>
 
           {/* Descriptive Paragraph */}
-          <p className="text-gray-600 max-w-2xl  mx-auto  text-xs mb-10 leading-relaxed">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo.
+          <p className="text-gray-600 max-w-2xl mx-auto text-xs mb-10 leading-relaxed">
+            At AlgoFurnish, we believe your home deserves furniture that’s as unique as you are. 
+            Since our founding, we’ve been dedicated to blending timeless craftsmanship with modern design, 
+            using only the finest materials. Our curated collections are designed to bring comfort, style, 
+            and durability to every room—so you can create a space you truly love.
           </p>
 
           {/* Signature Section */}
@@ -50,7 +50,7 @@ const AboutUs = () => {
             <div className="flex items-center justify-center gap-2">
               <span className="text-sm text-gray-700">Jenny Alexander</span>
               <span className="w-1 h-1 bg-orange-500 rounded-full"></span>
-              <span className="text-sm text-gray-700">CEO</span>
+              <span className="text-sm text-gray-700">CEO & Founder</span>
             </div>
           </div>
 
@@ -61,7 +61,7 @@ const AboutUs = () => {
               <div className="col-span-1 md:col-span-2">
                 <img
                   src={aboutData.images[0]}
-                  alt="Craftsperson working with orbital sander"
+                  alt="Master craftsperson finishing a custom wood table"
                   className="rounded-2xl w-full h-[500px] object-cover shadow-lg"
                 />
               </div>
@@ -69,12 +69,12 @@ const AboutUs = () => {
               <div className="col-span-1 md:col-span-3 flex flex-col gap-6">
                 <img
                   src={aboutData.images[1]}
-                  alt="Craftsperson operating drill press"
+                  alt="Team assembling a modern sofa"
                   className="rounded-2xl w-full h-[242px] object-cover shadow-lg"
                 />
                 <img
                   src={aboutData.images[2]}
-                  alt="Hands working with wood and tools"
+                  alt="Detail of hand-carved furniture leg"
                   className="rounded-2xl w-full h-[242px] object-cover shadow-lg"
                 />
               </div>
@@ -84,23 +84,23 @@ const AboutUs = () => {
           <div className="bg-yellow-500 rounded-lg p-8 mt-8">
             <div className="grid grid-cols-5 gap-2 text-center">
               <div className="text-white">
-                <div className="text-3xl font-bold">25+</div>
+                <div className="text-3xl font-bold">10+</div>
                 <div className="text-sm opacity-90">Years</div>
               </div>
               <div className="text-white">
-                <div className="text-3xl font-bold">180+</div>
+                <div className="text-3xl font-bold">50+</div>
                 <div className="text-sm opacity-90">Stores</div>
               </div>
               <div className="text-white">
-                <div className="text-3xl font-bold">100k+</div>
+                <div className="text-3xl font-bold">20k+</div>
                 <div className="text-sm opacity-90">Customers</div>
               </div>
               <div className="text-white">
-                <div className="text-3xl font-bold">35+</div>
+                <div className="text-3xl font-bold">12</div>
                 <div className="text-sm opacity-90">Awards</div>
               </div>
               <div className="text-white">
-                <div className="text-3xl font-bold">98%</div>
+                <div className="text-3xl font-bold">99%</div>
                 <div className="text-sm opacity-90">Satisfied</div>
               </div>
             </div>
@@ -204,8 +204,9 @@ const AboutUs = () => {
                 </span>
               </h3>
               <p className="text-gray-600 mb-8 px-8 mt-4 ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Every AlgoFurnish piece is crafted from responsibly sourced wood and premium fabrics, 
+                ensuring long-lasting beauty and comfort. Our artisans pay attention to every detail, 
+                from joinery to finishing, so you receive furniture that’s not only stylish but also built to last.
               </p>
 
               {/* Features */}
@@ -214,15 +215,14 @@ const AboutUs = () => {
                 <div className="flex flex-col items-left gap-2 ">
                   <img
                     src="/images/logo.png"
-                    alt="Logo"
+                    alt="Best Quality Wood"
                     className="w-20 h-20"
                   />
                   <div className="font-semibold text-gray-900">
                     Best Quality Wood
                   </div>
                   <div className="text-gray-500 text-sm max-w-xs">
-                    Sed ut perspiciatis unde omnis iste natus error sit
-                    voluptatem
+                    We use only FSC-certified hardwoods and eco-friendly finishes for a sustainable, healthy home.
                   </div>
                 </div>
 
@@ -230,15 +230,14 @@ const AboutUs = () => {
                 <div className="flex flex-col items-left gap-2">
                   <img
                     src="/images/logo1.png"
-                    alt="Logo"
+                    alt="Comfort-Driven Design"
                     className="w-20 h-20"
                   />
                   <div className="font-semibold text-gray-900">
                     Comfort-Driven Design
                   </div>
                   <div className="text-gray-500 text-sm max-w-xs">
-                    Sed ut perspiciatis unde omnis iste natus error sit
-                    voluptatem
+                    Our ergonomic designs are tested for real-life comfort, so you can relax and enjoy every moment.
                   </div>
                 </div>
               </div>
@@ -247,10 +246,8 @@ const AboutUs = () => {
           {/* --- End Our Product Quality Section --- */}
 
           {/* --- Meet Our Team Section --- */}
-
-          {/* --- End Meet Our Team Section --- */}
-        </div>{" "}
-        {/* <-- This closes the main container! */}
+          {/* ... (Team section remains as is) ... */}
+        </div>
       </section>
       <Team data={teamData} />
       <Features data={furnitureData.features} />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+
 import furnitureData from "../../data/furnitureData.json";
 import trackData from "../../data/trackorder.json";
 import Navbar from "../../components/Navbar";
@@ -201,8 +201,8 @@ const TrackTimeline = () => {
 };
 
 const TrackResults = () => {
-  const location = useLocation();
-  const { orderId, email } = location.state || {};
+  
+
 
   // Helper for the checkmark node
   const StepCheck = ({ active }) => (

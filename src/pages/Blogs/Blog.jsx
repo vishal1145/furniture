@@ -30,41 +30,6 @@ const Blog = () => {
     navigate(`/blogdetails/${slug}`);
   };
 
-  const renderPageNumbers = () => {
-    const pages = [];
-
-    if (totalPages <= 5) {
-      for (let i = 1; i <= totalPages; i++) pages.push(i);
-    } else {
-      pages.push(1);
-      if (currentPage > 3) pages.push("...");
-      const start = Math.max(2, currentPage - 1);
-      const end = Math.min(totalPages - 1, currentPage + 1);
-      for (let i = start; i <= end; i++) pages.push(i);
-      if (currentPage < totalPages - 2) pages.push("...");
-      pages.push(totalPages);
-    }
-
-    return pages.map((page, idx) =>
-      typeof page === "string" ? (
-        <span key={idx} className="mx-1 text-gray-600">
-          ...
-        </span>
-      ) : (
-        <button
-          key={idx}
-          onClick={() => handlePageChange(page)}
-          className={`w-8 h-8 mx-1 rounded-full text-sm font-medium transition ${
-            currentPage === page
-              ? "bg-yellow-400 text-black"
-              : "text-black hover:bg-gray-200"
-          }`}
-        >
-          {page}
-        </button>
-      )
-    );
-  };
 
   return (
     <>
@@ -98,16 +63,12 @@ const Blog = () => {
                   <p className="text-gray-600 text-sm mb-3">
                     {blog.description}
                   </p>
-                  <a
-                    href="#"
-                    className="text-green-700 font-semibold underline"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleBlogClick(blog.slug);
-                    }}
+                  <button
+                    className="text-green-700 text-sm font-semibold underline hover:text-green-900 transition"
+                    onClick={() => handleBlogClick(blog.slug)}
                   >
                     Read More
-                  </a>
+                  </button>
                 </div>
               </div>
             ))}

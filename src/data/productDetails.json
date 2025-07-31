@@ -6,24 +6,25 @@
     { "label": "Chair", "href": "/product-details"},
     { "label": "productdetails", "href": "/product-details"}
   ],
-  "type": "Chair",
-  "producttitle": "Red Gaming Chair",
+ 
+  "type": "Gaming Chair",
+  "producttitle": "Redline Ergonomic Gaming Chair",
   "inStock": true,
   "rating": 4.9,
   "reviewCount": 245,
-  "price": 90,
-  "oldPrice": 100,
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.",
-  "colors": ["#3B1F0B", "#5B4636", "#FFFFFF", "#00B894", "#00BFFF"],
-  "selectedColor": "#3B1F0B",
+  "price": 179,
+  "oldPrice": 229,
+  "description": "Designed for champions, the Redline Ergonomic Gaming Chair delivers comfort, durability, and style. Featuring high-density foam, adjustable armrests, a reclining backrest, and lumbar support, it’s built for marathon gaming sessions or long office hours.",
+  "colors": ["#8B0000", "#333333", "#FFFFFF", "#00B894", "#1E90FF"],
+  "selectedColor": "#8B0000",
   "quantity": 4,
-  "sku": "FRNC87654ABC",
-  "tags": ["Furniture", "Office", "Gaming Chair", "Chair"],
-  "image": "/images/chair7.png",
+  "sku": "GCH-REDLINE-2025",
+  "tags": ["Gaming Chair", "Ergonomic", "Office Furniture", "High Back", "Adjustable"],
+  "image": "/images/products/redline-chair-front.png",
   "images": [
-    "/images/chair7.png",
-    "/images/chair7.png",
-    "/images/chair7.png",
-    "/images/chair7.png"
+    "/images/products/redline-chair-front.png",
+    "/images/products/redline-chair-side.png",
+    "/images/products/redline-chair-back.png",
+    "/images/products/redline-chair-recline.png"
   ]
 }

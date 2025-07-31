@@ -1,9 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useParams } from "react-router-dom";
+
 
 const Blogs = ({ data }) => {
-  const { slug } = useParams();
+
   const navigate = useNavigate();
 
   const handleOpenBlogPage = () =>{

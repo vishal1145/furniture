@@ -8,10 +8,7 @@ import Features from "../../components/Features";
 
 const OrderCompleted = () => {
   const {
-    orderId,
-    paymentMethod,
-    transactionId,
-    estimatedDelivery,
+  
     products,
     shipping,
     taxes,

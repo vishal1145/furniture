@@ -28,6 +28,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop/>} />
         <Route path="/shop/:type/product-details/:id" element={<ProductDetails />} />
+        {/* Add this simpler route */}
+        <Route path="/productdetails/:id" element={<ProductDetails />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/payment" element={<Payment/>}/>

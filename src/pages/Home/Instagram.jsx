@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from 'react';
-import { motion } from "framer-motion";
 
 const Instagram = ({ data }) => {
   const scrollRef = useRef(null);
