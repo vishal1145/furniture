@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c07247c9.css",
+    "main.js": "/static/js/main.01d6c8d5.js",
+    "static/js/453.6cdb1733.chunk.js": "/static/js/453.6cdb1733.chunk.js",
+    "static/media/fa-solid-900.ttf": "/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
+    "static/media/fa-brands-400.ttf": "/static/media/fa-brands-400.1815e00441357e01619e.ttf",
+    "static/media/fa-solid-900.woff2": "/static/media/fa-solid-900.2463b90d9a316e4e5294.woff2",
+    "static/media/fa-brands-400.woff2": "/static/media/fa-brands-400.c210719e60948b211a12.woff2",
+    "static/media/fa-regular-400.ttf": "/static/media/fa-regular-400.914997e1bdfc990d0897.ttf",
+    "static/media/dancing-script-latin-400-normal.woff": "/static/media/dancing-script-latin-400-normal.eb245c6a9672c41e58b5.woff",
+    "static/media/fa-regular-400.woff2": "/static/media/fa-regular-400.89999bdf5d835c012025.woff2",
+    "static/media/dancing-script-latin-400-normal.woff2": "/static/media/dancing-script-latin-400-normal.b09da0c376bf729a1642.woff2",
+    "static/media/dancing-script-latin-ext-400-normal.woff": "/static/media/dancing-script-latin-ext-400-normal.dc37eb9968e86a5d2ff3.woff",
+    "static/media/dancing-script-latin-ext-400-normal.woff2": "/static/media/dancing-script-latin-ext-400-normal.11d74e43d26287abb252.woff2",
+    "static/media/fa-v4compatibility.ttf": "/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
+    "static/media/dancing-script-vietnamese-400-normal.woff": "/static/media/dancing-script-vietnamese-400-normal.2c07c72dd97de0d672af.woff",
+    "static/media/dancing-script-vietnamese-400-normal.woff2": "/static/media/dancing-script-vietnamese-400-normal.608e7b2d4ae6bf473059.woff2",
+    "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
+    "index.html": "/index.html",
+    "main.c07247c9.css.map": "/static/css/main.c07247c9.css.map",
+    "main.01d6c8d5.js.map": "/static/js/main.01d6c8d5.js.map",
+    "453.6cdb1733.chunk.js.map": "/static/js/453.6cdb1733.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c07247c9.css",
+    "static/js/main.01d6c8d5.js"
+  ]
+}

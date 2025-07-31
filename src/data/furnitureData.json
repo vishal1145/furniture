@@ -6,7 +6,7 @@
       "icon": "F"
     },
     "menuItems": [
-      { "name": "Home", "href": "/" },
+      
       { "name": "Shop", "href": "/shop" },
      
       { "name": "About Us", "href": "/aboutus" },
