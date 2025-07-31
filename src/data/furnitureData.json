@@ -1,7 +1,7 @@
 {
   "navigation": {
     "logo": {
-      "text": "Furniture",
+      "text": " Byron Bay Lounges",
       "accent": ".",
       "icon": "F"
     },
@@ -506,7 +506,7 @@
   },
   "footer": {
     "logo": {
-      "text": "Furniture",
+      "text": " Byron Bay Lounges",
       "accent": ".",
       "icon": "F"
     },
@@ -530,9 +530,9 @@
         { "name": "Return Policy", "href": "/RefundPolicy" }
       ],
       "Contact Info": [
-        { "name": "+0123-456-789", "href": "tel:+0123-456-789" },
-        { "name": "example@gmail.com", "href": "mailto:example@gmail.com" },
-        { "name": "8502 Preston Rd. Inglewood, Maine 98380", "href": "#" }
+        { "name": "+61 2 6618 7077", "href": "tel:+61 2 6618 7077" },
+        { "name": "support@byronbaylounges.shop", "href": "mailto:support@byronbaylounges.shop" },
+        { "name": "Byron Bay NSW 2481, Australia", "href": "#" }
       ]
     },
     "copyright": "© 2025 Furniture. All Rights Reserved."

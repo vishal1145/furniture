@@ -1,98 +1,100 @@
 import React from 'react';
-
+import { useNavigate } from 'react-router-dom';
 const Footer = ({ data }) => {
+    const navigate = useNavigate();
+
   return (
     <footer className="bg-green-900 text-white">
-      <div className=" px-6 sm:px-12 lg:px-32 py-12">
-      <div className="max-w-7xl mx-auto  grid grid-cols-1 md:grid-cols-5 gap-10 text-left">
-        {/* Logo and Description */}
-        <div className="text-center md:text-left">
-          <div className="flex items-center mb-4 justify-center md:justify-start">
-            <div className="bg-yellow-400 text-[#1e4d2b] w-10 h-10 py-2 px-4 rounded-full flex items-center justify-center font-bold text-lg">
-              {data.logo.icon}
+      <div className="px-6 sm:px-12 lg:px-32 py-12">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-4 ">
+          {/* Logo and Description */}
+          <div className="text-center md:text-left md:col-span-1">
+            <div className="flex items-center mb-4 justify-center md:justify-start">
+              <div className="flex items-center cursor-pointer" onClick={() => navigate('/')}>
+                <div className="w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-full flex items-center justify-center overflow-hidden">
+                  <img
+                    src="/ChatGPT Image Jul 31, 2025, 06_45_14 PM.png"
+                    alt="Logo"
+                    className="w-20 h-20 md:w-28 md:h-28 lg:w-30 lg:h-30 object-contain"
+                  />
+                </div>
+                <h1 className="text-xl md:text-2xl lg:text-3xl text-white font-medium ml-2 md:ml-3">
+                  {data.logo.text}<span className="text-yellow-500">{data.logo.accent}</span>
+                </h1>
+              </div>
             </div>
-            <span className="ml-2 text-4xl ">
-              {data.logo.text}<span className="text-yellow-400">{data.logo.accent}</span>
-            </span>
+            <p className="text-sm text-gray-300 mb-8">{data.description}</p>
+            <div className="flex justify-center md:justify-start space-x-2 mt-2">
+              {[
+                { name: 'Facebook', icon: 'fab fa-facebook-f', url: 'https://facebook.com/yourpage' },
+                { name: 'Twitter', icon: 'fab fa-twitter', url: 'https://twitter.com/yourhandle' },
+                { name: 'Pinterest', icon: 'fab fa-pinterest-p', url: 'https://pinterest.com/yourpage' },
+                { name: 'Instagram', icon: 'fab fa-instagram', url: 'https://instagram.com/yourprofile' },
+                { name: 'YouTube', icon: 'fab fa-youtube', url: 'https://youtube.com/yourchannel' }
+              ].map((item, index) => (
+                <a key={index} href={item.url} target="_blank" rel="noopener noreferrer">
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center bg-white/10 backdrop-blur-sm">
+                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#1e4d2b] flex items-center justify-center shadow-md">
+                      <div className="bg-white w-5 h-5 md:w-6 md:h-6 rounded-full flex items-center justify-center">
+                        <i className={`${item.icon} text-[#1e4d2b] text-xs md:text-sm`}></i>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
           </div>
-          <p className="text-sm text-gray-300 mb-4">{data.description}</p>
-<div className="flex justify-center space-x-2 mt-2 ml-4">
-{[
-  { name: 'Facebook', icon: 'fab fa-facebook-f', url: 'https://facebook.com/yourpage' },
-  { name: 'Twitter', icon: 'fab fa-twitter', url: 'https://twitter.com/yourhandle' },
-  { name: 'Pinterest', icon: 'fab fa-pinterest-p', url: 'https://pinterest.com/yourpage' },
-  { name: 'Instagram', icon: 'fab fa-instagram', url: 'https://instagram.com/yourprofile' },
-  { name: 'YouTube', icon: 'fab fa-youtube', url: 'https://youtube.com/yourchannel' }
-].map((item, index) => (
-  <a key={index} href={item.url} target="_blank" rel="noopener noreferrer">
-    {/* Outermost transparent circle like water */}
-    <div className="w-10 h-10 rounded-full flex items-center justify-center bg-white/10 backdrop-blur-sm">
-      {/* Middle green circle */}
-      <div className="w-10 h-10 rounded-full bg-[#1e4d2b] flex items-center justify-center shadow-md">
-        {/* Inner white circle with icon */}
-        <div className="bg-white w-6 h-6 rounded-full flex items-center justify-center">
-          <i className={`${item.icon} text-[#1e4d2b] text-sm`}></i>
+
+          {/* Company */}
+          <div className="text-left">
+            <h3 className="text-lg mb-4 mt-4">Company</h3>
+            <ul className="space-y-2 text-sm text-gray-300">
+              {data.links.Company.map((link, index) => (
+                <li key={index}><a href={link.href}>{link.name}</a></li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Customer Services */}
+          <div className="text-left">
+            <h3 className="text-lg mb-4 mt-4">Customer Services</h3>
+            <ul className="space-y-2 text-sm text-gray-300">
+              {data.links['Customer Services'].map((link, index) => (
+                <li key={index}><a href={link.href}>{link.name}</a></li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Our Information */}
+          <div className="text-left">
+            <h3 className="text-lg mb-4 mt-4">Our Information</h3>
+            <ul className="space-y-2 text-sm text-gray-300">
+              {data.links['Our Information'].map((link, index) => (
+                <li key={index}><a href={link.href}>{link.name}</a></li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div className="text-left">
+            <h3 className="text-lg mb-4 mt-4">Contact Info</h3>
+            <ul className="space-y-2 text-sm text-gray-300">
+              {data.links['Contact Info'].map((link, index) => (
+                <li key={index}>
+                  {link.href.startsWith('tel:') || link.href.startsWith('mailto:') ? (
+                    <a href={link.href}>{link.name}</a>
+                  ) : (
+                    <span>{link.name}</span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </a>
-))}
-
-</div>
-
-
-
-        </div>
-
-        {/* Company */}
-        <div className="text-left">
-          <h3 className="text-lg  mb-4">Company</h3>
-          <ul className="space-y-2 text-sm text-gray-300">
-            {data.links.Company.map((link, index) => (
-              <li key={index}><a href={link.href}>{link.name}</a></li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Customer Services */}
-        <div className="text-left">
-          <h3 className="text-lg  mb-4">Customer Services</h3>
-          <ul className="space-y-2 text-sm text-gray-300">
-            {data.links['Customer Services'].map((link, index) => (
-              <li key={index}><a href={link.href}>{link.name}</a></li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Our Information */}
-        <div className="text-left">
-          <h3 className="text-lg  mb-4">Our Information</h3>
-          <ul className="space-y-2 text-sm text-gray-300">
-            {data.links['Our Information'].map((link, index) => (
-              <li key={index}><a href={link.href}>{link.name}</a></li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Contact Info */}
-        <div className="text-left">
-          <h3 className="text-lg  mb-4">Contact Info</h3>
-          <ul className="space-y-2 text-sm text-gray-300">
-            {data.links['Contact Info'].map((link, index) => (
-              <li key={index}>
-                {link.href.startsWith('tel:') || link.href.startsWith('mailto:') ? (
-                  <a href={link.href}>{link.name}</a>
-                ) : (
-                  <span>{link.name}</span>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-</div>
+      
       {/* Bottom Bar */}
-      <div className="bg-yellow-400 text-sm text-gray-900 mt-12 py-4  px-6 sm:px-12 lg:px-32">
+      <div className="bg-yellow-400 text-sm text-gray-900 mt-12 py-4 px-6 sm:px-12 lg:px-32">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center">
           <p className="mb-2 sm:mb-0">{data.copyright}</p>
           <div className="flex items-center gap-4">
@@ -111,7 +113,6 @@ const Footer = ({ data }) => {
           </div>
         </div>
       </div>
-      
     </footer>
   );
 };

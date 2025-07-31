@@ -3,6 +3,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { FaSearch, FaTimes } from 'react-icons/fa';
 import shopData from '../data/shop.json';
 import relatedProducts from '../data/relatedProduct.json';
+import furnitureData from '../data/furnitureData.json'; // Fixed: furnitureData.json (not furniture.json)
 
 const Navbar = ({ data }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -21,11 +22,12 @@ const Navbar = ({ data }) => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
-  // Get all products from shop.json
+  // Get all products from shop.json and furnitureData.json
   const allProducts = useMemo(() => {
     return [
       ...(shopData.products || []),
-      ...(relatedProducts || [])
+      ...(relatedProducts || []),
+      ...(furnitureData.products?.items || []) // Fixed: access the items array from furnitureData
     ];
   }, []);
 
@@ -145,7 +147,7 @@ const Navbar = ({ data }) => {
           <div className="flex items-center cursor-pointer" onClick={() => navigate('/')}>
             <div className="w-20 h-20 rounded-full flex items-center justify-center overflow-hidden">
               <img
-                src="/logofuni.png"
+                src="/ChatGPT Image Jul 31, 2025, 06_45_14 PM.png"
                 alt="Logo"
                 className="w-37 h-37 object-contain"
               />
