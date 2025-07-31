@@ -8,7 +8,7 @@ const Footer = ({ data }) => {
         {/* Logo and Description */}
         <div className="text-center md:text-left">
           <div className="flex items-center mb-4 justify-center md:justify-start">
-            <div className="bg-yellow-400 text-[#1e4d2b] w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">
+            <div className="bg-yellow-400 text-[#1e4d2b] w-10 h-10 py-2 px-4 rounded-full flex items-center justify-center font-bold text-lg">
               {data.logo.icon}
             </div>
             <span className="ml-2 text-4xl ">
