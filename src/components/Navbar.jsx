@@ -73,7 +73,7 @@ const navigate = useNavigate();
   />
 </div>
 
-            <h1 className="text-3xl font-semibold text-gray-800">
+            <h1 className="text-3xl font-semibold text-gray-700">
               {data.logo.text}<span className="text-yellow-500">{data.logo.accent}</span>
             </h1>
           </div>
@@ -91,7 +91,7 @@ const navigate = useNavigate();
           <div className="flex items-center gap-5 text-gray-700 text-[18px]">
             {/* Search */}
             <button className="hover:text-green-600" onClick={() => navigate('/shop', { state: { openSearch: true } })}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <circle cx="11" cy="11" r="8"></circle>
   <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
 </svg>
@@ -100,8 +100,8 @@ const navigate = useNavigate();
              <Link to="/wishlist">
             {/* Wishlist */}
             <button className="hover:text-green-600 mt-2 relative">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M20.8 4.6c-1.6-1.5-4.2-1.5-5.8 0l-.9.9-.9-.9c-1.6-1.5-4.2-1.5-5.8 0s-1.6 4 0 5.6l6.7 6.7 6.7-6.7c1.6-1.5 1.6-4.1 0-5.6z"/>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
 </svg>
                   {wishlistCount > 0 && (
                     <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">
@@ -113,7 +113,7 @@ const navigate = useNavigate();
             {/* Cart */}
            <Link to="/cart">
   <button className="hover:text-green-700 relative mt-2">
- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+ <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <circle cx="9" cy="21" r="1"></circle>
   <circle cx="20" cy="21" r="1"></circle>
   <path d="M1 1h4l2.6 13.3a1 1 0 001 .7h11.4a1 1 0 001-.8l1.4-7H6"/>
@@ -129,7 +129,7 @@ const navigate = useNavigate();
             {/* Profile */}
               <Link to="/myaccount">
             <button className="hover:text-green-600">
-             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
   <circle cx="12" cy="7" r="4"/>
 </svg>

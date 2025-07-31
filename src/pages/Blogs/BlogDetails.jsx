@@ -16,6 +16,10 @@ const BlogDetails = () => {
 
   if (!blog) return <div className="text-center py-20">Blog not found.</div>;
 
+  // Get the current page URL dynamically
+  const shareUrl = window.location.href;
+  const title = blog.title || "Check out this amazing blog post!";
+
   return (
     <>
       <Navbar data={furnitureData.navigation} />
@@ -37,9 +41,11 @@ const BlogDetails = () => {
         <div className="lg:col-span-1">
           <div className="sticky top-8">
             <h3 className="text-sm font-bold text-gray-400 mb-4 uppercase">Share</h3>
+           
             <div className="flex flex-col gap-3">
+              {/* Facebook */}
               <a 
-                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}&quote=${encodeURIComponent(blog.title || 'Check out this amazing blog post!')}`}
+                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}&quote=${encodeURIComponent(title)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-green-800 rounded-full flex items-center justify-center text-white hover:bg-green-700 transition-colors"
@@ -47,8 +53,10 @@ const BlogDetails = () => {
               >
                 <FaFacebookF />
               </a>
+
+              {/* Twitter */}
               <a 
-                href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(blog.title || 'Check out this amazing blog post!')}&hashtags=furniture,blog,home`}
+                href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(title)}&hashtags=furniture,blog,home`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-green-800 rounded-full flex items-center justify-center text-white hover:bg-green-700 transition-colors"
@@ -56,8 +64,10 @@ const BlogDetails = () => {
               >
                 <FaTwitter />
               </a>
+
+              {/* LinkedIn */}
               <a 
-                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}&title=${encodeURIComponent(blog.title || 'Amazing blog post from AlgoFurnish!')}`}
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}&title=${encodeURIComponent(title)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-green-800 rounded-full flex items-center justify-center text-white hover:bg-green-700 transition-colors"
@@ -109,11 +119,13 @@ const BlogDetails = () => {
           {/* Introduction Paragraph with Drop Cap */}
           <div className="mb-8">
             <p className="text-gray-700 leading-relaxed">
-              <span className="float-left w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center text-5xl font-bold text-black mr-4 leading-none">L</span>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.
+              <span className="float-left w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center text-5xl font-bold text-black mr-4 leading-none">
+                {blog.introduction.dropCap}
+              </span>
+              {blog.introduction.firstParagraph}
             </p>
             <p className="text-gray-600 leading-relaxed mt-4">
-              ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+              {blog.introduction.secondParagraph}
             </p>
           </div>
 
@@ -161,83 +173,64 @@ const BlogDetails = () => {
             </div>
           </div>
 
-          {/* New Section: Cleaning and Maintenance Tips */}
-          <div className="mb-10">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
-              Cleaning and Maintenance Tips
-            </h2>
-            
-            <div className="space-y-4">
-          <div className="flex items-start gap-3 relative">
-  <div className="relative w-4 h-4 bg-green-800 rounded-full mt-2 flex-shrink-0">
-    <div className="absolute left-0 w-2 h-2 bg-yellow-400 rounded-full top-0.5"></div>
-  </div>
-  <p className="text-gray-600 leading-relaxed">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.
-  </p>
-</div>
-
+          {/* Cleaning and Maintenance Tips */}
+          {blog.content.cleaningTips && (
+            <div className="mb-10">
+              <h2 className="text-xl font-semibold text-gray-900 mb-4">
+                {blog.content.cleaningTips.heading}
+              </h2>
               
-                   <div className="flex items-start gap-3 relative">
-  <div className="relative w-4 h-4 bg-green-800 rounded-full mt-2 flex-shrink-0">
-    <div className="absolute left-0 w-2 h-2 bg-yellow-400 rounded-full top-0.5"></div>
-  </div>
-  <p className="text-gray-600 leading-relaxed">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.
-  </p>
-</div>
-                        <div className="flex items-start gap-3 relative">
-  <div className="relative w-4 h-4 bg-green-800 rounded-full mt-2 flex-shrink-0">
-    <div className="absolute left-0 w-2 h-2 bg-yellow-400 rounded-full top-0.5"></div>
-  </div>
-  <p className="text-gray-600 leading-relaxed">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.
-  </p>
-</div>
-              
-                     <div className="flex items-start gap-3 relative">
-  <div className="relative w-4 h-4 bg-green-800 rounded-full mt-2 flex-shrink-0">
-    <div className="absolute left-0 w-2 h-2 bg-yellow-400 rounded-full top-0.5"></div>
-  </div>
-  <p className="text-gray-600 leading-relaxed">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.
-  </p>
-</div>
+              <div className="space-y-4">
+                {blog.content.cleaningTips.tips.map((tip, index) => (
+                  <div key={index} className="flex items-start gap-3 relative">
+                    <div className="relative w-4 h-4 bg-green-800 rounded-full mt-2 flex-shrink-0">
+                      <div className="absolute left-0 w-2 h-2 bg-yellow-400 rounded-full top-0.5"></div>
+                    </div>
+                    <p className="text-gray-600 leading-relaxed">
+                      {tip}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
 
-          {/* New Section: Protecting Your Investment */}
-          <div className="mb-10">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
-              Protecting Your Investment
-            </h2>
-            <p className="text-gray-600 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
-            </p>
-          </div>
+          {/* Protecting Your Investment */}
+          {blog.content.protectingInvestment && (
+            <div className="mb-10">
+              <h2 className="text-xl font-semibold text-gray-900 mb-4">
+                {blog.content.protectingInvestment.heading}
+              </h2>
+              <p className="text-gray-600 leading-relaxed">
+                {blog.content.protectingInvestment.text}
+              </p>
+            </div>
+          )}
 
           {/* Testimonial/Quote Block */}
-          <div className="mb-10">
-            <div className="bg-yellow-500 rounded-2xl p-6">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0">
-                  <img
-                    src="/images/Leslie .jpg"
-                    alt="Jerome Bell"
-                    className="w-16 h-16 rounded-full object-cover"
-                  />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">
-                    Jerome Bell
-                  </h3>
-                  <p className="text-gray-700 leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-                  </p>
+          {blog.content.testimonial && (
+            <div className="mb-10">
+              <div className="bg-yellow-500 rounded-2xl p-6">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0">
+                    <img
+                      src={blog.content.testimonial.image}
+                      alt={blog.content.testimonial.name}
+                      className="w-16 h-16 rounded-full object-cover"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">
+                      {blog.content.testimonial.name}
+                    </h3>
+                    <p className="text-gray-700 leading-relaxed">
+                      {blog.content.testimonial.text}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          )}
         </div>
 
         {/* Right Sidebar */}

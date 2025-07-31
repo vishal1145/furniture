@@ -3,8 +3,8 @@ import blogNews from "../data/blognews.json";
 
 const Blog = () => {
   return (
-    <section className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4">
+    <section className="py-16 bg-white px-6 sm:px-12 lg:px-32 ">
+      <div className="max-w-7xl mx-auto ">
         {/* Section Header */}
         <div className="text-center mb-12">
           <p className="text-sm text-gray-700 flex items-center justify-center gap-2">

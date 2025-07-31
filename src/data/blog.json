@@ -234,6 +234,11 @@
       "image": "/images/blog-detail-hero.jpg",
       "tags": ["Furniture", "Trends", "2024"],
       "categories": ["Sofa", "Furniture", "Bed", "Offices", "Chair", "Lighting", "Nightstand", "Office Table", "Decor", "Dining Table", "Mirrors"],
+      "introduction": {
+        "dropCap": "L",
+        "firstParagraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+        "secondParagraph": "ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+      },
       "content": {
         "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         "body": [
@@ -250,8 +255,25 @@
             "heading": "Matching Your Sofa to Your Décor",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
           }
-          
-        ]
+        ],
+        "cleaningTips": {
+          "heading": "Cleaning and Maintenance Tips",
+          "tips": [
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et."
+          ]
+        },
+        "protectingInvestment": {
+          "heading": "Protecting Your Investment",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
+        },
+        "testimonial": {
+          "name": "Jerome Bell",
+          "image": "/images/Leslie .jpg",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+        }
       }
     },
     {
@@ -265,6 +287,11 @@
       "image": "/images/blog-detail-hero.jpg",
       "tags": ["Furniture", "Sofa", "Living Room"],
       "categories": ["Sofa", "Furniture", "Bed", "Offices", "Chair", "Lighting", "Nightstand", "Office Table", "Decor", "Dining Table", "Mirrors"],
+      "introduction": {
+        "dropCap": "L",
+        "firstParagraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+        "secondParagraph": "ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+      },
       "content": {
         "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         "body": [
@@ -281,8 +308,25 @@
             "heading": "Matching Your Sofa to Your Décor",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
           }
-          
-        ]
+        ],
+        "cleaningTips": {
+          "heading": "Cleaning and Maintenance Tips",
+          "tips": [
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et."
+          ]
+        },
+        "protectingInvestment": {
+          "heading": "Protecting Your Investment",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
+        },
+        "testimonial": {
+          "name": "Jerome Bell",
+          "image": "/images/Leslie .jpg",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+        }
       }
     },
     {
@@ -296,6 +340,11 @@
       "image": "/images/blog-detail-hero.jpg",
       "tags": ["Dining", "Table", "Furniture"],
       "categories": ["Sofa", "Furniture", "Bed", "Offices", "Chair", "Lighting", "Nightstand", "Office Table", "Decor", "Dining Table", "Mirrors"],
+      "introduction": {
+        "dropCap": "L",
+        "firstParagraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+        "secondParagraph": "ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+      },
       "content": {
         "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
        "body": [
@@ -312,8 +361,25 @@
             "heading": "Matching Your Sofa to Your Décor",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
           }
-          
-        ]
+        ],
+        "cleaningTips": {
+          "heading": "Cleaning and Maintenance Tips",
+          "tips": [
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et."
+          ]
+        },
+        "protectingInvestment": {
+          "heading": "Protecting Your Investment",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
+        },
+        "testimonial": {
+          "name": "Jerome Bell",
+          "image": "/images/Leslie .jpg",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+        }
       }
     },
     {
@@ -327,6 +393,11 @@
       "image": "/images/blog-detail-hero.jpg",
       "tags": ["Small Space", "Furniture", "Design"],
       "categories": ["Sofa", "Furniture", "Bed", "Offices", "Chair", "Lighting", "Nightstand", "Office Table", "Decor", "Dining Table", "Mirrors"],
+      "introduction": {
+        "dropCap": "L",
+        "firstParagraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+        "secondParagraph": "ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+      },
       "content": {
         "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
  "body": [
@@ -343,8 +414,25 @@
             "heading": "Matching Your Sofa to Your Décor",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
           }
-          
-        ]
+        ],
+        "cleaningTips": {
+          "heading": "Cleaning and Maintenance Tips",
+          "tips": [
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et."
+          ]
+        },
+        "protectingInvestment": {
+          "heading": "Protecting Your Investment",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
+        },
+        "testimonial": {
+          "name": "Jerome Bell",
+          "image": "/images/Leslie .jpg",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+        }
       }
     },
     {
@@ -358,6 +446,11 @@
       "image": "/images/blog-detail-hero.jpg",
       "tags": ["Minimalist", "Living Room", "Design"],
       "categories": ["Sofa", "Furniture", "Bed", "Offices", "Chair", "Lighting", "Nightstand", "Office Table", "Decor", "Dining Table", "Mirrors"],
+      "introduction": {
+        "dropCap": "L",
+        "firstParagraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+        "secondParagraph": "ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+      },
       "content": {
         "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   "body": [
@@ -374,8 +467,25 @@
             "heading": "Matching Your Sofa to Your Décor",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
           }
-          
-        ]
+        ],
+        "cleaningTips": {
+          "heading": "Cleaning and Maintenance Tips",
+          "tips": [
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et."
+          ]
+        },
+        "protectingInvestment": {
+          "heading": "Protecting Your Investment",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
+        },
+        "testimonial": {
+          "name": "Jerome Bell",
+          "image": "/images/Leslie .jpg",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+        }
       }
     },
     {
@@ -389,6 +499,11 @@
       "image": "/images/blog-detail-hero.jpg",
       "tags": ["Eco-Friendly", "Furniture", "Brands"],
       "categories": ["Sofa", "Furniture", "Bed", "Offices", "Chair", "Lighting", "Nightstand", "Office Table", "Decor", "Dining Table", "Mirrors"],
+      "introduction": {
+        "dropCap": "L",
+        "firstParagraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+        "secondParagraph": "ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+      },
       "content": {
         "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
        "body": [
@@ -405,8 +520,25 @@
             "heading": "Matching Your Sofa to Your Décor",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
           }
-          
-        ]
+        ],
+        "cleaningTips": {
+          "heading": "Cleaning and Maintenance Tips",
+          "tips": [
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et."
+          ]
+        },
+        "protectingInvestment": {
+          "heading": "Protecting Your Investment",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
+        },
+        "testimonial": {
+          "name": "Jerome Bell",
+          "image": "/images/Leslie .jpg",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+        }
       }
     },
     {
@@ -420,6 +552,11 @@
       "image": "/images/blog-detail-hero.jpg",
       "tags": ["Reading Nook", "Cozy", "Home"],
       "categories": ["Sofa", "Furniture", "Bed", "Offices", "Chair", "Lighting", "Nightstand", "Office Table", "Decor", "Dining Table", "Mirrors"],
+      "introduction": {
+        "dropCap": "L",
+        "firstParagraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+        "secondParagraph": "ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+      },
       "content": {
         "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   "body": [
@@ -436,8 +573,25 @@
             "heading": "Matching Your Sofa to Your Décor",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
           }
-          
-        ]
+        ],
+        "cleaningTips": {
+          "heading": "Cleaning and Maintenance Tips",
+          "tips": [
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et."
+          ]
+        },
+        "protectingInvestment": {
+          "heading": "Protecting Your Investment",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
+        },
+        "testimonial": {
+          "name": "Jerome Bell",
+          "image": "/images/Leslie .jpg",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+        }
       }
     },
     {
@@ -451,6 +605,11 @@
       "image": "/images/blog-detail-hero.jpg",
       "tags": ["Smart Furniture", "Technology", "Design"],
       "categories": ["Sofa", "Furniture", "Bed", "Offices", "Chair", "Lighting", "Nightstand", "Office Table", "Decor", "Dining Table", "Mirrors"],
+      "introduction": {
+        "dropCap": "L",
+        "firstParagraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+        "secondParagraph": "ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+      },
       "content": {
         "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         "body": [
@@ -467,8 +626,25 @@
             "heading": "Matching Your Sofa to Your Décor",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
           }
-          
-        ]
+        ],
+        "cleaningTips": {
+          "heading": "Cleaning and Maintenance Tips",
+          "tips": [
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et."
+          ]
+        },
+        "protectingInvestment": {
+          "heading": "Protecting Your Investment",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
+        },
+        "testimonial": {
+          "name": "Jerome Bell",
+          "image": "/images/Leslie .jpg",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+        }
       }
     },
     {
@@ -482,6 +658,11 @@
       "image": "/images/blog-detail-hero.jpg",
       "tags": ["Scandinavian", "Interior", "Design"],
       "categories": ["Sofa", "Furniture", "Bed", "Offices", "Chair", "Lighting", "Nightstand", "Office Table", "Decor", "Dining Table", "Mirrors"],
+      "introduction": {
+        "dropCap": "L",
+        "firstParagraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+        "secondParagraph": "ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+      },
       "content": {
         "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
        "body": [
@@ -498,8 +679,25 @@
             "heading": "Matching Your Sofa to Your Décor",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
           }
-          
-        ]
+        ],
+        "cleaningTips": {
+          "heading": "Cleaning and Maintenance Tips",
+          "tips": [
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et."
+          ]
+        },
+        "protectingInvestment": {
+          "heading": "Protecting Your Investment",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
+        },
+        "testimonial": {
+          "name": "Jerome Bell",
+          "image": "/images/Leslie .jpg",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+        }
       }
     }
   ]
